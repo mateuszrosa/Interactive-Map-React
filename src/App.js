@@ -1,8 +1,13 @@
 import React from "react";
+import Title from "./components/Title";
 import "./App.css";
 
 function App() {
-  return <div className="App">start</div>;
+  return (
+    <>
+      <Title />
+    </>
+  );
 }
 
 export default App;
