@@ -1,8 +1,13 @@
 import React from "react";
-import styles from "./Title.module.scss";
+import styled from "styled-components";
+
+const Heading = styled.h1`
+  text-align: center;
+  font-size: 60px;
+`;
 
 const Title = () => {
-  return <h1 className={styles.wrapper}>Title</h1>;
+  return <Heading>Title</Heading>;
 };
 
 export default Title;
