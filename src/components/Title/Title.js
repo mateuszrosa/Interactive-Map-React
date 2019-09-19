@@ -3,11 +3,12 @@ import styled from "styled-components";
 
 const Heading = styled.h1`
   text-align: center;
-  font-size: 60px;
+  font-size: 80px;
+  margin-top: 10px;
 `;
 
 const Title = () => {
-  return <Heading>Title</Heading>;
+  return <Heading>Interactive World Map React</Heading>;
 };
 
 export default Title;
