@@ -5,11 +5,16 @@ import "./App.css";
 
 class App extends React.Component {
   state = {};
+
+  handleClick = e => {
+    console.log(e.target);
+  };
+
   render() {
     return (
       <>
         <Title />
-        <Map />
+        <Map click={this.handleClick} />
       </>
     );
   }
