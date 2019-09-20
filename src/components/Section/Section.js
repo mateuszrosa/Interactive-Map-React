@@ -1,8 +1,13 @@
 import React from "react";
-import { styles } from "./Section.module.scss";
+import Title from "../Title/Title";
+import styles from "./Section.module.scss";
 
 const Section = () => {
-  return <section>Input</section>;
+  return (
+    <section>
+      <Title type="section" />
+    </section>
+  );
 };
 
 export default Section;

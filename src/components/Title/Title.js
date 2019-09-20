@@ -1,15 +1,12 @@
 import React from "react";
-import styled from "styled-components";
+// import styleds from "styled-components";
+import "./Title.module.scss";
 
-const Heading = styled.h1`
-  text-align: center;
-  font-size: 80px;
-  margin-top: 10px;
-  margin-bottom: 0;
-`;
-
-const Title = () => {
-  return <Heading>Interactive World Map React</Heading>;
+const Title = ({ type = "default" }) => {
+  {
+    console.log(type);
+  }
+  return <h1>Interactive World Map React</h1>;
 };
 
 export default Title;
