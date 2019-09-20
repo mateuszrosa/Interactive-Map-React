@@ -14,6 +14,8 @@ class App extends React.Component {
       item.style.fill = "#ac9d93";
     });
     e.target.style.fill = "gray";
+    let value = e.target.getAttribute("title");
+    console.log(value);
   };
 
   render() {
