@@ -1,6 +1,7 @@
 import React from "react";
 import Title from "./components/Title/Title";
 import Map from "./components/Map/Map";
+import Section from "./components/Section/Section";
 import "./App.css";
 
 const body = document.querySelector("body");
@@ -23,6 +24,7 @@ class App extends React.Component {
       <>
         <Title />
         <Map click={this.handleClick} />
+        <Section />
       </>
     );
   }
