@@ -5,7 +5,7 @@ import "./Section.module.scss";
 const Section = () => {
   return (
     <section>
-      <Title type="section" />
+      <Title type="section" text="Find information about that country" />
     </section>
   );
 };

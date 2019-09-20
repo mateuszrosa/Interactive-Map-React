@@ -22,7 +22,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <Title />
+        <Title text="Interactive World Map" />
         <Map click={this.handleClick} />
         <Section />
       </>

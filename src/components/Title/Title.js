@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./Title.module.scss";
 
-const Title = ({ type = "default" }) => {
+const Title = ({ type = "default", text }) => {
   return (
     <h1 className={type === "default" ? styles.default : styles.section}>
-      Interactive World Map React
+      {text}
     </h1>
   );
 };
