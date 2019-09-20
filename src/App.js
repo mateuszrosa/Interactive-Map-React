@@ -3,11 +3,17 @@ import Title from "./components/Title/Title";
 import Map from "./components/Map/Map";
 import "./App.css";
 
+const body = document.querySelector("body");
+
 class App extends React.Component {
   state = {};
 
   handleClick = e => {
-    console.log(e.target);
+    const land = body.querySelectorAll(".land");
+    land.forEach(item => {
+      item.style.fill = "#ac9d93";
+    });
+    e.target.style.fill = "gray";
   };
 
   render() {
