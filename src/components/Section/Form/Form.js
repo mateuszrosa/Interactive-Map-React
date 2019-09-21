@@ -1,5 +1,6 @@
 import React from "react";
 import Input from "./Input/Input";
+import styles from "./Form.module.scss";
 
 const Form = () => {
   return (
