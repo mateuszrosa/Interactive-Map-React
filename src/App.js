@@ -23,7 +23,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <Heading text="Interactive World Map" />
+        <Heading text="Interactive World Map" type="title" />
         <Map click={this.handleClick} />
         <Section />
         <Footer />
