@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./Title.module.scss";
+import styles from "./Heading.module.scss";
 
-const Title = ({ type = "default", text }) => {
+const Heading = ({ type = "default", text }) => {
   return (
     <h1 className={type === "default" ? styles.default : styles.section}>
       {text}
@@ -9,4 +9,4 @@ const Title = ({ type = "default", text }) => {
   );
 };
 
-export default Title;
+export default Heading;

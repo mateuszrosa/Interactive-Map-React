@@ -1,5 +1,5 @@
 import React from "react";
-import Title from "./components/Title/Title";
+import Heading from "./components/Heading/Heading";
 import Map from "./components/Map/Map";
 import Section from "./components/Section/Section";
 import Footer from "./components/Footer/Footer";
@@ -23,7 +23,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <Title text="Interactive World Map" />
+        <Heading text="Interactive World Map" />
         <Map click={this.handleClick} />
         <Section />
         <Footer />
