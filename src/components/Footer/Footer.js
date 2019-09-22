@@ -5,7 +5,7 @@ import styles from "./Footer.module.scss";
 const Footer = () => {
   return (
     <footer>
-      <Heading text="footer" />
+      <Heading size="h3" text="footer" />
     </footer>
   );
 };

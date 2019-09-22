@@ -1,12 +1,25 @@
 import React from "react";
 import styles from "./Heading.module.scss";
 
-const Heading = ({ type = "default", text }) => {
-  return (
-    <h1 className={type === "default" ? styles.default : styles.section}>
-      {text}
-    </h1>
-  );
+const Heading = ({ size = "h1", type = "default", text }) => {
+  if (size === "h1") {
+    return (
+      <h1 className={type === "default" ? styles.default : styles.section}>
+        {text}
+      </h1>
+    );
+  } else {
+    return (
+      <h3 className={type === "default" ? styles.default : styles.section}>
+        {text}
+      </h3>
+    );
+  }
+  // return (
+  //   <h1 className={type === "default" ? styles.default : styles.section}>
+  //     {text}
+  //   </h1>
+  // );
 };
 
 export default Heading;
