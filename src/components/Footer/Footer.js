@@ -6,7 +6,11 @@ import styles from "./Footer.module.scss";
 const Footer = () => {
   return (
     <footer>
-      <Heading size="h3" text={<Link text="Link1" />} />
+      <Heading
+        size="h3"
+        text="based on "
+        comp={<Link href="https://restcountries.eu" text="REST COUNTRIES" />}
+      ></Heading>
     </footer>
   );
 };
