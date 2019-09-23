@@ -4,6 +4,7 @@ import Map from "./components/Map/Map";
 import Section from "./components/Section/Section";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
+import Info from "./components/Section/Info/Info";
 
 const body = document.querySelector("body");
 
@@ -17,7 +18,11 @@ class App extends React.Component {
     });
     e.target.style.fill = "gray";
     let value = e.target.getAttribute("title");
-    console.log(value);
+    this.handleTest(value);
+  };
+  handleTest = text => {
+    const h1 = document.querySelector(".info h1");
+    h1.textContent = `Name: ${text}`;
   };
 
   render() {

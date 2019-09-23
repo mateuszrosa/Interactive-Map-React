@@ -4,12 +4,12 @@ import Form from "./Form/Form";
 import Info from "./Info/Info";
 import "./Section.module.scss";
 
-const Section = () => {
+const Section = ({ click }) => {
   return (
     <section>
       <Heading type="section" text="Find information about that country" />
       <Form />
-      <Info />
+      <Info click={click} />
     </section>
   );
 };
