@@ -16,12 +16,7 @@ class App extends React.Component {
     });
     e.target.style.fill = "gray";
     let value = e.target.getAttribute("title");
-    this.handleTest(value);
     this.handleFetch(value);
-  };
-  handleTest = text => {
-    const h1 = document.querySelector(".info h1");
-    h1.textContent = `Name: ${text}`;
   };
   handleInput = e => {
     const h1 = document.querySelectorAll(".info h1");
