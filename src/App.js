@@ -28,19 +28,24 @@ class App extends React.Component {
     let value = e.target.getAttribute("title");
     this.handleFetch(value);
   };
-  handleInput = e => {
-    const h1 = document.querySelectorAll(".info h1");
+  handleInput = () => {
+    this.setState(state => ({
+      name: "",
+      region: "",
+      subregion: "",
+      nativeName: "",
+      capital: "",
+      language: "",
+      currency: "",
+      population: "",
+      img: ""
+    }));
     const land = body.querySelectorAll(".land");
     land.forEach(item => {
       item.style.fill = "#ac9d93";
     });
-    h1.forEach(item => {
-      item.textContent = "";
-    });
   };
   handleFetch = value => {
-    const h1 = document.querySelectorAll(".info h1");
-    const img = document.querySelector(".info img");
     fetch(`https://restcountries.eu/rest/v2/name/` + value)
       .then(resp => {
         return resp.json();
