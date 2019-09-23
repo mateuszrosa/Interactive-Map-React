@@ -30,6 +30,7 @@ class App extends React.Component {
   };
   handleFetch = value => {
     const h1 = document.querySelectorAll(".info h1");
+    const img = document.querySelector(".info img");
     fetch(`https://restcountries.eu/rest/v2/name/` + value)
       .then(resp => {
         return resp.json();
@@ -44,6 +45,8 @@ class App extends React.Component {
         h1[5].innerHTML = `Language: <span class="inf">${country.languages[0].name}</span>`;
         h1[6].innerHTML = `Currency: <span class="inf">${country.currencies[0].code}</span>`;
         h1[7].innerHTML = `Population: <span class="inf">${country.population.toLocaleString()}</span>`;
+        img.setAttribute("src", country.flag);
+        img.style.boxShadow = "0 0 3px 3px gray";
       }, false);
   };
 
