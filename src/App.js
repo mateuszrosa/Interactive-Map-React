@@ -20,6 +20,10 @@ class App extends React.Component {
   };
   handleInput = e => {
     const h1 = document.querySelectorAll(".info h1");
+    const land = body.querySelectorAll(".land");
+    land.forEach(item => {
+      item.style.fill = "#ac9d93";
+    });
     h1.forEach(item => {
       item.textContent = "";
     });
