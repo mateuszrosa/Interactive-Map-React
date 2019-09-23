@@ -4,10 +4,8 @@ import Map from "./components/Map/Map";
 import Section from "./components/Section/Section";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
-import Info from "./components/Section/Info/Info";
 
 const body = document.querySelector("body");
-
 class App extends React.Component {
   state = {};
 
@@ -24,13 +22,17 @@ class App extends React.Component {
     const h1 = document.querySelector(".info h1");
     h1.textContent = `Name: ${text}`;
   };
+  handleInput = e => {
+    const h1 = document.querySelectorAll(".info h1");
+    h1[0].textContent = "";
+  };
 
   render() {
     return (
       <>
         <Heading text="Interactive World Map" type="title" />
         <Map click={this.handleClick} />
-        <Section />
+        <Section click={this.handleInput} />
         <Footer />
       </>
     );

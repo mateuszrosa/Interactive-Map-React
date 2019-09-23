@@ -8,8 +8,8 @@ const Section = ({ click }) => {
   return (
     <section>
       <Heading type="section" text="Find information about that country" />
-      <Form />
-      <Info click={click} />
+      <Form click={click} />
+      <Info />
     </section>
   );
 };

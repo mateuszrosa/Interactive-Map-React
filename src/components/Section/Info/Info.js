@@ -5,7 +5,14 @@ import "./Info.module.scss";
 const Info = ({ click }) => {
   return (
     <div className="info" onClick={click}>
-      <Heading text="test" />
+      <Heading text="" />
+      <Heading text="" />
+      <Heading text="" />
+      <Heading text="" />
+      <Heading text="" />
+      <Heading text="" />
+      <Heading text="" />
+      <Heading text="" />
     </div>
   );
 };

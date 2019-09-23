@@ -2,10 +2,10 @@ import React from "react";
 import Input from "./Input/Input";
 import styles from "./Form.module.scss";
 
-const Form = () => {
+const Form = ({ click }) => {
   return (
     <form>
-      <Input type="text" />
+      <Input click={click} type="text" />
       <Input type="submit" />
     </form>
   );
