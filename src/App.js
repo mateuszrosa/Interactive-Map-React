@@ -20,7 +20,9 @@ class App extends React.Component {
   };
   handleInput = e => {
     const h1 = document.querySelectorAll(".info h1");
-    h1[0].textContent = "";
+    h1.forEach(item => {
+      item.textContent = "";
+    });
   };
   handleFetch = value => {
     const h1 = document.querySelectorAll(".info h1");
