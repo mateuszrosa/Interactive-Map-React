@@ -7,7 +7,17 @@ import "./App.css";
 
 const body = document.querySelector("body");
 class App extends React.Component {
-  state = {};
+  state = {
+    name: "",
+    region: "",
+    subregion: "",
+    nativeName: "",
+    capital: "",
+    language: "",
+    currency: "",
+    population: "",
+    img: ""
+  };
 
   handleClick = e => {
     const land = body.querySelectorAll(".land");
@@ -37,16 +47,17 @@ class App extends React.Component {
       })
       .then(data => {
         let country = data[0];
-        h1[0].innerHTML = `Name: <span class="inf">${country.name}</span>`;
-        h1[1].innerHTML = `Region: <span class="inf">${country.region}</span>`;
-        h1[2].innerHTML = `Subegion: <span class="inf">${country.subregion}</span>`;
-        h1[3].innerHTML = `Native name: <span class="inf">${country.nativeName}</span>`;
-        h1[4].innerHTML = `Capital: <span class="inf">${country.capital}</span>`;
-        h1[5].innerHTML = `Language: <span class="inf">${country.languages[0].name}</span>`;
-        h1[6].innerHTML = `Currency: <span class="inf">${country.currencies[0].code}</span>`;
-        h1[7].innerHTML = `Population: <span class="inf">${country.population.toLocaleString()}</span>`;
-        img.setAttribute("src", country.flag);
-        img.style.boxShadow = "0 0 3px 3px gray";
+        this.setState(state => ({
+          name: country.name,
+          region: country.subregion,
+          subregion: country.subregion,
+          nativeName: country.nativeName,
+          capital: country.capital,
+          language: country.languages[0].name,
+          currency: country.currencies[0].code,
+          population: country.population.toLocaleString(),
+          img: country.flag
+        }));
       }, false);
   };
 
@@ -55,7 +66,7 @@ class App extends React.Component {
       <>
         <Heading text="Interactive World Map" type="title" />
         <Map click={this.handleClick} />
-        <Section click={this.handleInput} />
+        <Section click={this.handleInput} info={this.state} />
         <Footer />
       </>
     );

@@ -3,18 +3,12 @@ import Heading from "../../Heading/Heading";
 import Img from "./Img/Img";
 import "./Info.module.scss";
 
-const Info = ({ click }) => {
+const Info = props => {
+  const { name } = props.info;
+  console.log(name);
   return (
-    <div className="info" onClick={click}>
-      <Heading />
-      <Heading />
-      <Heading />
-      <Heading />
-      <Heading />
-      <Heading />
-      <Heading />
-      <Heading />
-      <Img />
+    <div className="info">
+      <Heading text={`Name: ${name}`} />
     </div>
   );
 };
