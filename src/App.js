@@ -21,6 +21,7 @@ class App extends React.Component {
   };
 
   handleClick = e => {
+    if (e.target.getAttribute("title") === null) return;
     const land = body.querySelectorAll(".land");
     land.forEach(item => {
       item.style.fill = "#ac9d93";
