@@ -1,8 +1,8 @@
 import React from "react";
 import "./Span.module.scss";
 
-const Span = () => {
-  return <span></span>;
+const Span = ({ text }) => {
+  return <span>{text}</span>;
 };
 
 export default Span;
