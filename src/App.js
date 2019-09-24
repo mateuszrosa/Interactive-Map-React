@@ -8,6 +8,7 @@ import "./App.css";
 const body = document.querySelector("body");
 class App extends React.Component {
   state = {
+    display: false,
     name: "",
     region: "",
     subregion: "",
@@ -30,6 +31,7 @@ class App extends React.Component {
   };
   handleInput = () => {
     this.setState(state => ({
+      display: false,
       name: "",
       region: "",
       subregion: "",
@@ -53,6 +55,7 @@ class App extends React.Component {
       .then(data => {
         let country = data[0];
         this.setState(state => ({
+          display: true,
           name: country.name,
           region: country.subregion,
           subregion: country.subregion,
