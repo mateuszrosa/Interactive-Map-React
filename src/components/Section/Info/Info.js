@@ -16,7 +16,6 @@ const Info = props => {
     population,
     img
   } = props.info;
-  console.log(display);
   return (
     <div className={display ? styles.show : styles.info}>
       <Heading text={`Name: ${name}`} />
