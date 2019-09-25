@@ -28,6 +28,15 @@ class App extends React.Component {
     });
     e.target.style.fill = "gray";
     let value = e.target.getAttribute("title");
+    if (value === "South Korea") {
+      value = "Korea (Republic of)";
+    } else if (value === "North Korea") {
+      value = "Korea (Democratic People's Republic of)";
+    } else if (value === "Republic of Congo") {
+      value = "Congo";
+    } else if (value === "Democratic Republic of Congo") {
+      value = "Congo (Democratic Republic of the)";
+    }
     this.handleFetch(value);
   };
   handleInput = () => {
