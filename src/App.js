@@ -64,6 +64,9 @@ class App extends React.Component {
       })
       .then(data => {
         let country = data[0];
+        if (value === "India") {
+          country = data[1];
+        }
         this.setState(state => ({
           display: true,
           name: country.name,
