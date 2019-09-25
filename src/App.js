@@ -39,7 +39,7 @@ class App extends React.Component {
     }
     this.handleFetch(value);
   };
-  handleInput = () => {
+  handleInput = e => {
     this.setState(state => ({
       display: false,
       name: "",
@@ -56,6 +56,7 @@ class App extends React.Component {
     land.forEach(item => {
       item.style.fill = "#ac9d93";
     });
+    e.target.value = "";
   };
   handleSubmit = e => {
     e.preventDefault();
