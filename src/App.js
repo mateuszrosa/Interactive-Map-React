@@ -72,6 +72,8 @@ class App extends React.Component {
       console.log("valid");
       input.value = "Invalid country name";
       input.style = "color: red";
+    } else {
+      this.handleFetch(value);
     }
   };
   handleFetch = value => {
