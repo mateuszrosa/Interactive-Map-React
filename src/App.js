@@ -66,6 +66,8 @@ class App extends React.Component {
         let country = data[0];
         if (value === "India") {
           country = data[1];
+        } else if (value === "United States") {
+          country = data[1];
         }
         this.setState(state => ({
           display: true,
