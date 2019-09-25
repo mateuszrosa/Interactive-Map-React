@@ -57,6 +57,10 @@ class App extends React.Component {
       item.style.fill = "#ac9d93";
     });
   };
+  handleChange = e => {
+    e.preventDefault();
+    console.log(e.target);
+  };
   handleFetch = value => {
     fetch(`https://restcountries.eu/rest/v2/name/` + value)
       .then(resp => {
@@ -89,7 +93,11 @@ class App extends React.Component {
       <>
         <Heading text="Interactive World Map" type="title" />
         <Map click={this.handleClick} />
-        <Section click={this.handleInput} info={this.state} />
+        <Section
+          click={this.handleInput}
+          change={this.handleChange}
+          info={this.state}
+        />
         <Footer />
       </>
     );
