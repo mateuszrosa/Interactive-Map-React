@@ -66,6 +66,8 @@ class App extends React.Component {
       });
     };
     const value = toTitleCase(input.value);
+    const selection =
+      document.querySelector(`#g5406 path[title="${value}"]`) !== null;
     input.value = "";
   };
   handleFetch = value => {
