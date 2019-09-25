@@ -57,13 +57,15 @@ class App extends React.Component {
       item.style.fill = "#ac9d93";
     });
   };
-  handleChange = e => {
+  handleSubmit = e => {
     e.preventDefault();
+    const inputValue = e.target.firstElementChild.value;
     const toTitleCase = str => {
       return str.replace(/\w\S*/g, txt => {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
       });
     };
+    const value = toTitleCase(inputValue);
   };
   handleFetch = value => {
     fetch(`https://restcountries.eu/rest/v2/name/` + value)
@@ -99,7 +101,7 @@ class App extends React.Component {
         <Map click={this.handleClick} />
         <Section
           click={this.handleInput}
-          change={this.handleChange}
+          submit={this.handleSubmit}
           info={this.state}
         />
         <Footer />
