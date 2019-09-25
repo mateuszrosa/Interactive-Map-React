@@ -59,13 +59,14 @@ class App extends React.Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    const inputValue = e.target.firstElementChild.value;
+    let input = e.target.firstElementChild;
     const toTitleCase = str => {
       return str.replace(/\w\S*/g, txt => {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
       });
     };
-    const value = toTitleCase(inputValue);
+    const value = toTitleCase(input.value);
+    input.value = "";
   };
   handleFetch = value => {
     fetch(`https://restcountries.eu/rest/v2/name/` + value)
