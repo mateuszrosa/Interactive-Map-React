@@ -59,7 +59,11 @@ class App extends React.Component {
   };
   handleChange = e => {
     e.preventDefault();
-    console.log(e.target);
+    const toTitleCase = str => {
+      return str.replace(/\w\S*/g, txt => {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      });
+    };
   };
   handleFetch = value => {
     fetch(`https://restcountries.eu/rest/v2/name/` + value)
