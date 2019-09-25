@@ -68,7 +68,11 @@ class App extends React.Component {
     const value = toTitleCase(input.value);
     const selection =
       document.querySelector(`#g5406 path[title="${value}"]`) !== null;
-    input.value = "";
+    if (!selection) {
+      console.log("valid");
+      input.value = "Invalid country name";
+      input.style = "color: red";
+    }
   };
   handleFetch = value => {
     fetch(`https://restcountries.eu/rest/v2/name/` + value)
