@@ -75,6 +75,7 @@ class App extends React.Component {
       });
     };
     const value = toTitleCase(input.value);
+    const country = document.querySelector(`#g5406 path[title="${value}"]`);
     const selection =
       document.querySelector(`#g5406 path[title="${value}"]`) !== null;
     if (!selection) {
@@ -84,7 +85,8 @@ class App extends React.Component {
       }));
       input.value = "";
     } else {
-      this.handleFillCountry(value);
+      this.handleFetch(value);
+      this.handleFillCountry(country);
       this.handleReset();
     }
     input.value = "";
