@@ -17,7 +17,8 @@ class App extends React.Component {
     language: "",
     currency: "",
     population: "",
-    img: ""
+    img: "",
+    input: true
   };
 
   handleClick = e => {
@@ -50,7 +51,8 @@ class App extends React.Component {
       language: "",
       currency: "",
       population: "",
-      img: ""
+      img: "",
+      placeholderText: "Write your country name"
     }));
     const land = body.querySelectorAll(".land");
     land.forEach(item => {
@@ -70,9 +72,10 @@ class App extends React.Component {
     const selection =
       document.querySelector(`#g5406 path[title="${value}"]`) !== null;
     if (!selection) {
-      console.log("valid");
-      input.value = "Invalid country name";
-      input.style = "color: red";
+      this.setState(state => ({
+        input: false
+      }));
+      input.value = "";
     } else {
       this.handleFetch(value);
     }
@@ -113,6 +116,7 @@ class App extends React.Component {
           click={this.handleInput}
           submit={this.handleSubmit}
           info={this.state}
+          input={this.state.input}
         />
         <Footer />
       </>
