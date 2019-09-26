@@ -31,28 +31,18 @@ class App extends React.Component {
 
   handleClick = e => {
     if (e.target.getAttribute("title") === null) return;
+    const country = e.target;
+    const value = e.target.getAttribute("title");
+    this.handleFillCountry(country);
+    this.handleFetch(value);
+  };
+
+  handleFillCountry = country => {
     const land = body.querySelectorAll(".land");
     land.forEach(item => {
       item.style.fill = "#ac9d93";
     });
-    e.target.style.fill = "gray";
-    let value = e.target.getAttribute("title");
-    this.handleFillCountry(value);
-  };
-
-  handleFillCountry = value => {
-    console.log(value);
-    if (value === "South Korea") {
-      value = "Korea (Republic of)";
-    } else if (value === "North Korea") {
-      value = "Korea (Democratic People's Republic of)";
-    } else if (value === "Republic of Congo") {
-      value = "Congo";
-    } else if (value === "Democratic Republic of Congo") {
-      value = "Congo (Democratic Republic of the)";
-    }
-    this.handleFetch(value);
-    this.handleReset();
+    country.style.fill = "gray";
   };
 
   handleInput = e => {
@@ -94,14 +84,22 @@ class App extends React.Component {
       }));
       input.value = "";
     } else {
-      this.handleFetch(value);
+      this.handleFillCountry(value);
       this.handleReset();
     }
     input.value = "";
   };
 
   handleFetch = value => {
-    console.log(value);
+    if (value === "South Korea") {
+      value = "Korea (Republic of)";
+    } else if (value === "North Korea") {
+      value = "Korea (Democratic People's Republic of)";
+    } else if (value === "Republic of Congo") {
+      value = "Congo";
+    } else if (value === "Democratic Republic of Congo") {
+      value = "Congo (Democratic Republic of the)";
+    }
     fetch(`https://restcountries.eu/rest/v2/name/` + value)
       .then(resp => {
         return resp.json();
