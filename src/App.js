@@ -25,6 +25,11 @@ class App extends React.Component {
   handleClick = e => {
     if (e.target.getAttribute("title") === null) return;
     const land = body.querySelectorAll(".land");
+    const input = document.querySelector("input");
+    this.setState(state => ({
+      input: true,
+      placeholderText: "Write your country name"
+    }));
     land.forEach(item => {
       item.style.fill = "#ac9d93";
     });
