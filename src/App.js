@@ -19,13 +19,13 @@ class App extends React.Component {
     population: "",
     img: "",
     input: true,
-    placeholderText: "Write your country name"
+    placeholderText: "Write country name"
   };
 
   handleReset = () => {
     this.setState(state => ({
       input: true,
-      placeholderText: "Write your country name"
+      placeholderText: "Write country name"
     }));
   };
 
@@ -35,6 +35,7 @@ class App extends React.Component {
     const value = e.target.getAttribute("title");
     this.handleFillCountry(country);
     this.handleFetch(value);
+    this.handleReset();
   };
 
   handleFillCountry = country => {
