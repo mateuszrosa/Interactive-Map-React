@@ -37,6 +37,11 @@ class App extends React.Component {
     });
     e.target.style.fill = "gray";
     let value = e.target.getAttribute("title");
+    this.handleFillCountry(value);
+  };
+
+  handleFillCountry = value => {
+    console.log(value);
     if (value === "South Korea") {
       value = "Korea (Republic of)";
     } else if (value === "North Korea") {
@@ -49,6 +54,7 @@ class App extends React.Component {
     this.handleFetch(value);
     this.handleReset();
   };
+
   handleInput = e => {
     this.setState(state => ({
       display: false,
@@ -69,6 +75,7 @@ class App extends React.Component {
     e.target.value = "";
     this.handleReset();
   };
+
   handleSubmit = e => {
     e.preventDefault();
     let input = e.target.firstElementChild;
@@ -92,7 +99,9 @@ class App extends React.Component {
     }
     input.value = "";
   };
+
   handleFetch = value => {
+    console.log(value);
     fetch(`https://restcountries.eu/rest/v2/name/` + value)
       .then(resp => {
         return resp.json();
