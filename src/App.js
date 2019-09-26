@@ -22,14 +22,16 @@ class App extends React.Component {
     placeholderText: "Write your country name"
   };
 
-  handleClick = e => {
-    if (e.target.getAttribute("title") === null) return;
-    const land = body.querySelectorAll(".land");
-    const input = document.querySelector("input");
+  handleReset = () => {
     this.setState(state => ({
       input: true,
       placeholderText: "Write your country name"
     }));
+  };
+
+  handleClick = e => {
+    if (e.target.getAttribute("title") === null) return;
+    const land = body.querySelectorAll(".land");
     land.forEach(item => {
       item.style.fill = "#ac9d93";
     });
@@ -45,6 +47,7 @@ class App extends React.Component {
       value = "Congo (Democratic Republic of the)";
     }
     this.handleFetch(value);
+    this.handleReset();
   };
   handleInput = e => {
     this.setState(state => ({
@@ -57,15 +60,14 @@ class App extends React.Component {
       language: "",
       currency: "",
       population: "",
-      img: "",
-      placeholderText: "Write your country name",
-      input: true
+      img: ""
     }));
     const land = body.querySelectorAll(".land");
     land.forEach(item => {
       item.style.fill = "#ac9d93";
     });
     e.target.value = "";
+    this.handleReset();
   };
   handleSubmit = e => {
     e.preventDefault();
@@ -86,7 +88,9 @@ class App extends React.Component {
       input.value = "";
     } else {
       this.handleFetch(value);
+      this.handleReset();
     }
+    input.value = "";
   };
   handleFetch = value => {
     fetch(`https://restcountries.eu/rest/v2/name/` + value)
