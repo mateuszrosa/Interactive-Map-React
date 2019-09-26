@@ -2,12 +2,6 @@ input[type=submit] {
     margin-left: 10px;
 }
 
-.error {
-    ::placeholder {
-        color: red;
-    }
-}
-
-.normal {
-    color: blue;
+.error::placeholder {
+    color: red;
 }

@@ -7,14 +7,18 @@ const Input = props => {
   if (input === undefined) {
     return <input type={type} />;
   }
-  return (
-    <input
-      className={input === false ? styles.error : styles.normal}
-      onClick={click}
-      type={type}
-      placeholder={placeholder}
-    />
-  );
+  if (input === true) {
+    return <input onClick={click} type={type} placeholder={placeholder} />;
+  } else {
+    return (
+      <input
+        className={styles.error}
+        onClick={click}
+        type={type}
+        placeholder={placeholder}
+      />
+    );
+  }
 };
 
 export default Input;
