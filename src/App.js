@@ -18,7 +18,8 @@ class App extends React.Component {
     currency: "",
     population: "",
     img: "",
-    input: true
+    input: true,
+    placeholderText: "Write your country name"
   };
 
   handleClick = e => {
@@ -52,7 +53,8 @@ class App extends React.Component {
       currency: "",
       population: "",
       img: "",
-      placeholderText: "Write your country name"
+      placeholderText: "Write your country name",
+      input: true
     }));
     const land = body.querySelectorAll(".land");
     land.forEach(item => {
@@ -73,7 +75,8 @@ class App extends React.Component {
       document.querySelector(`#g5406 path[title="${value}"]`) !== null;
     if (!selection) {
       this.setState(state => ({
-        input: false
+        input: false,
+        placeholderText: "Invalid country name"
       }));
       input.value = "";
     } else {
@@ -117,6 +120,7 @@ class App extends React.Component {
           submit={this.handleSubmit}
           info={this.state}
           input={this.state.input}
+          placeholder={this.state.placeholderText}
         />
         <Footer />
       </>
