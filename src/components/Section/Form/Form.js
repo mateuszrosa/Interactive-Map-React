@@ -12,6 +12,7 @@ const Form = ({ click, submit, input, id, placeholder }) => {
         type="text"
         input={input}
         placeholder={placeholder}
+        id={id}
       />
       <Input type="submit" text="Search" />
     </form>

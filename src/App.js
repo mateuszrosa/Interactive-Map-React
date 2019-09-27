@@ -138,6 +138,7 @@ class App extends React.Component {
           info={this.state}
           input={this.state.input}
           placeholder={this.state.placeholderText}
+          id="country"
         />
         <Footer />
       </>
