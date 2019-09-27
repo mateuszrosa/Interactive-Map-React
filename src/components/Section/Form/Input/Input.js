@@ -3,7 +3,6 @@ import styles from "./Input.module.scss";
 
 const Input = props => {
   const { type, text, click, input, id, placeholder } = props;
-  console.log(id);
   if (input === undefined) {
     return <input type={type} value={text} />;
   }
