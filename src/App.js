@@ -19,7 +19,7 @@ class App extends React.Component {
     population: "",
     img: "",
     input: true,
-    placeholderText: "Write country name"
+    placeholderText: "Write here"
   };
 
   handleReset = () => {
@@ -35,7 +35,7 @@ class App extends React.Component {
       population: "",
       img: "",
       input: true,
-      placeholderText: "Write country name"
+      placeholderText: "Write here"
     }));
   };
 
