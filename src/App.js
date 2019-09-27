@@ -24,6 +24,16 @@ class App extends React.Component {
 
   handleReset = () => {
     this.setState(state => ({
+      display: false,
+      name: "",
+      region: "",
+      subregion: "",
+      nativeName: "",
+      capital: "",
+      language: "",
+      currency: "",
+      population: "",
+      img: "",
       input: true,
       placeholderText: "Write country name"
     }));
@@ -47,18 +57,6 @@ class App extends React.Component {
   };
 
   handleInput = e => {
-    this.setState(state => ({
-      display: false,
-      name: "",
-      region: "",
-      subregion: "",
-      nativeName: "",
-      capital: "",
-      language: "",
-      currency: "",
-      population: "",
-      img: ""
-    }));
     const land = body.querySelectorAll(".land");
     land.forEach(item => {
       item.style.fill = "#ac9d93";
@@ -117,7 +115,7 @@ class App extends React.Component {
         this.setState(state => ({
           display: true,
           name: country.name,
-          region: country.subregion,
+          region: country.region,
           subregion: country.subregion,
           nativeName: country.nativeName,
           capital: country.capital,
