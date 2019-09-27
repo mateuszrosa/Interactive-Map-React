@@ -67,7 +67,7 @@ class App extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    let input = e.target.firstElementChild;
+    let input = e.target.children[1];
     const toTitleCase = str => {
       return str.replace(/\w\S*/g, txt => {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
