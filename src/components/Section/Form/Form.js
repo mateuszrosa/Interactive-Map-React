@@ -13,7 +13,7 @@ const Form = ({ click, submit, input, id, placeholder }) => {
         input={input}
         placeholder={placeholder}
       />
-      <Input type="submit" />
+      <Input type="submit" text="Search" />
     </form>
   );
 };
