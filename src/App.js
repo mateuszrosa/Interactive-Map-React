@@ -106,6 +106,7 @@ class App extends React.Component {
         return resp.json();
       })
       .then(data => {
+        console.log(data);
         let country = data[0];
         if (value === "India") {
           country = data[1];
