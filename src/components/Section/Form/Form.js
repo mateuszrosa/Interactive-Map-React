@@ -5,7 +5,7 @@ import "components/Section/Form/Form.module.scss";
 
 const Form = ({ click, submit, input, id, placeholder }) => {
   return (
-    <form onSubmit={submit}>
+    <form autoComplete="off" onSubmit={submit}>
       <Label id={id} text="Write country name" />
       <Input
         click={click}
