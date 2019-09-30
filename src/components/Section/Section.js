@@ -7,7 +7,9 @@ import "components/Section/Section.module.scss";
 const Section = ({ click, submit, info, input, id, placeholder }) => {
   return (
     <section>
-      <Heading type="section">Find information about that country</Heading>
+      <Heading size="h1" type="section">
+        Find information about that country
+      </Heading>
       <Form
         click={click}
         submit={submit}

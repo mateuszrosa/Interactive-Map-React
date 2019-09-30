@@ -19,14 +19,13 @@ const Info = props => {
   } = props.info;
   return (
     <div className={display ? styles.show : styles.info}>
-      <Heading text={`Name: `} comp={<Span text={name} />} />
-      <Heading text={`Region: `} comp={<Span text={region} />} />
-      <Heading text={`Subregion: `} comp={<Span text={subregion} />} />
-      <Heading text={`Native name: `} comp={<Span text={nativeName} />} />
-      <Heading text={`Capital: `} comp={<Span text={capital} />} />
-      <Heading text={`Language: `} comp={<Span text={language} />} />
-      <Heading text={`Currency: `} comp={<Span text={currency} />} />
-      <Heading text={`Population: `} comp={<Span text={population} />} />
+      <Heading comp={<Span text={name} />}>Name: </Heading>
+      <Heading comp={<Span text={region} />}>Region: </Heading>
+      <Heading comp={<Span text={nativeName} />}>Native name: </Heading>
+      <Heading comp={<Span text={capital} />}>Capital: </Heading>
+      <Heading comp={<Span text={language} />}>Language: </Heading>
+      <Heading comp={<Span text={currency} />}>Currency: </Heading>
+      <Heading comp={<Span text={population} />}>Population: </Heading>
       <Img src={img} />
     </div>
   );

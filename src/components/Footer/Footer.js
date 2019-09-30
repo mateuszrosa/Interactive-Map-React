@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer>
       <Heading
-        size="h3"
+        size="h4"
         comp={<Link href="https://restcountries.eu" text="REST COUNTRIES" />}
       >
         based on<span> </span>
