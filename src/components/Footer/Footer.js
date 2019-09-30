@@ -8,9 +8,10 @@ const Footer = () => {
     <footer>
       <Heading
         size="h3"
-        text="based on "
         comp={<Link href="https://restcountries.eu" text="REST COUNTRIES" />}
-      ></Heading>
+      >
+        based on
+      </Heading>
     </footer>
   );
 };

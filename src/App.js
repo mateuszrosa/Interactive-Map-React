@@ -131,7 +131,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <Heading text="Interactive World Map" type="title" />
+        <Heading type="title">Interactive World Map</Heading>
         <Map click={this.handleClick} />
         <Section
           click={this.handleInput}
