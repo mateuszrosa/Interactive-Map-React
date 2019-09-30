@@ -10,7 +10,7 @@ const Footer = () => {
         size="h3"
         comp={<Link href="https://restcountries.eu" text="REST COUNTRIES" />}
       >
-        based on
+        based on<span> </span>
       </Heading>
     </footer>
   );
