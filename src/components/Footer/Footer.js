@@ -9,6 +9,7 @@ const Footer = () => {
       <Heading
         size="h4"
         comp={<Link href="https://restcountries.eu" text="REST COUNTRIES" />}
+        className1="footer"
       >
         based on<span> </span>
       </Heading>
