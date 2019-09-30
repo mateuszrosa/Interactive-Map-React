@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Heading.module.scss";
+import styles from "components/Heading/Heading.module.scss";
 
 const Heading = ({ size = "h1", type, text, comp }) => {
   if (size === "h1") {

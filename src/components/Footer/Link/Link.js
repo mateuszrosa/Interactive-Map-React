@@ -1,5 +1,5 @@
 import React from "react";
-import "./Link.module.scss";
+import "components/Footer/Link/Link.module.scss";
 
 const Link = ({ text, href, comp }) => {
   return <a href={href}>{text}</a>;

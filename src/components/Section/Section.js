@@ -1,8 +1,8 @@
 import React from "react";
-import Heading from "../Heading/Heading";
-import Form from "./Form/Form";
-import Info from "./Info/Info";
-import "./Section.module.scss";
+import Heading from "components/Heading/Heading";
+import Form from "components/Section/Form/Form";
+import Info from "components/Section/Info/Info";
+import "components/Section/Section.module.scss";
 
 const Section = ({ click, submit, info, input, id, placeholder }) => {
   return (

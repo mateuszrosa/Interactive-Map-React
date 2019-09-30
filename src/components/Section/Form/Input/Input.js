@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Input.module.scss";
+import styles from "components/Section/Form/Input/Input.module.scss";
 
 const Input = props => {
   const { type, text, click, input, id, placeholder } = props;

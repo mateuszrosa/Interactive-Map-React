@@ -1,5 +1,5 @@
 import React from "react";
-import "./Label.module.scss";
+import "components/Section/Form/Label/Label.module.scss";
 
 const Label = ({ text, id }) => {
   return <label htmlFor={id}>{text}</label>;

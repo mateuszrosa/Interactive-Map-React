@@ -1,8 +1,8 @@
 import React from "react";
-import Heading from "../../Heading/Heading";
-import Img from "./Img/Img";
-import Span from "./Span/Span";
-import styles from "./Info.module.scss";
+import Heading from "components/Heading/Heading";
+import Img from "components/Section/Info/Img/Img";
+import Span from "components/Section/Info/Span/Span";
+import styles from "components/Section/Info/Info.module.scss";
 
 const Info = props => {
   const {

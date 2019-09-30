@@ -1,7 +1,7 @@
 import React from "react";
-import Input from "./Input/Input";
-import Label from "./Label/Label";
-import "./Form.module.scss";
+import Input from "components/Section/Form/Input/Input";
+import Label from "components/Section/Form/Label/Label";
+import "components/Section/Form/Form.module.scss";
 
 const Form = ({ click, submit, input, id, placeholder }) => {
   return (

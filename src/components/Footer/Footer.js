@@ -1,7 +1,7 @@
 import React from "react";
-import Heading from "../Heading/Heading";
-import Link from "./Link/Link";
-import styles from "./Footer.module.scss";
+import Heading from "components/Heading/Heading";
+import Link from "components/Footer/Link/Link";
+import styles from "components/Footer/Footer.module.scss";
 
 const Footer = () => {
   return (
