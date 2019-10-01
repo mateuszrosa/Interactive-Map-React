@@ -1,10 +1,18 @@
 import React from "react";
 import SVG from "react-inlinesvg";
 import map from "images/worldHigh3.svg";
-import "components/Map/Map.module.scss";
+import styled, { css } from "styled-components";
+
+const StyledSVG = styled(SVG)`
+  display: block;
+  margin: 80px auto;
+  width: 55%;
+  height: 75vh;
+  transform: scale(1.1);
+`;
 
 const Map = props => {
-  return <SVG src={map} onClick={props.click} />;
+  return <StyledSVG src={map} onClick={props.click} />;
 };
 
 export default Map;
