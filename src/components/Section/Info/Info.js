@@ -21,6 +21,7 @@ const Info = props => {
     <div className={display ? styles.show : styles.info}>
       <Heading comp={<Span text={name} />}>Name: </Heading>
       <Heading comp={<Span text={region} />}>Region: </Heading>
+      <Heading comp={<Span text={subregion} />}>Subregion: </Heading>
       <Heading comp={<Span text={nativeName} />}>Native name: </Heading>
       <Heading comp={<Span text={capital} />}>Capital: </Heading>
       <Heading comp={<Span text={language} />}>Language: </Heading>
