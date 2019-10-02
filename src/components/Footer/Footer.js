@@ -1,18 +1,18 @@
 import React from "react";
-import Heading from "components/Heading/Heading";
+import Paragraph from "components/Paragraph/Paragraph";
 import Link from "components/Footer/Link/Link";
 import styles from "components/Footer/Footer.module.scss";
 
 const Footer = () => {
   return (
     <footer>
-      <Heading
+      <Paragraph
         size="h4"
         comp={<Link href="https://restcountries.eu" text="REST COUNTRIES" />}
         className1="footer"
       >
         based on<span> </span>
-      </Heading>
+      </Paragraph>
     </footer>
   );
 };
