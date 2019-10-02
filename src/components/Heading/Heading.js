@@ -5,11 +5,11 @@ import styled from "styled-components";
 let StyledHeading = styled.h1`
   margin: 0 auto 0 auto;
   text-align: center;
-  font-size: 60px;
+  font-size: ${props => (props.type === "title" ? "60px" : "24px")};
 `;
 
-const Heading = ({ children }) => {
-  return <StyledHeading>{children}</StyledHeading>;
+const Heading = ({ children, type }) => {
+  return <StyledHeading type={type}>{children}</StyledHeading>;
 };
 
 export default Heading;
