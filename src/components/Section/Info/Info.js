@@ -1,5 +1,5 @@
 import React from "react";
-import Heading from "components/Heading/Heading";
+import Paragraph from "components/Paragraph/Paragraph";
 import Img from "components/Section/Info/Img/Img";
 import Span from "components/Section/Info/Span/Span";
 import styles from "components/Section/Info/Info.module.scss";
@@ -19,14 +19,14 @@ const Info = props => {
   } = props.info;
   return (
     <div className={display ? styles.show : styles.info}>
-      <Heading comp={<Span text={name} />}>Name: </Heading>
-      <Heading comp={<Span text={region} />}>Region: </Heading>
-      <Heading comp={<Span text={subregion} />}>Subregion: </Heading>
-      <Heading comp={<Span text={nativeName} />}>Native name: </Heading>
-      <Heading comp={<Span text={capital} />}>Capital: </Heading>
-      <Heading comp={<Span text={language} />}>Language: </Heading>
-      <Heading comp={<Span text={currency} />}>Currency: </Heading>
-      <Heading comp={<Span text={population} />}>Population: </Heading>
+      <Paragraph comp={<Span text={name} />}>Name: </Paragraph>
+      <Paragraph comp={<Span text={region} />}>Region: </Paragraph>
+      <Paragraph comp={<Span text={subregion} />}>Subregion: </Paragraph>
+      <Paragraph comp={<Span text={nativeName} />}>Native name: </Paragraph>
+      <Paragraph comp={<Span text={capital} />}>Capital: </Paragraph>
+      <Paragraph comp={<Span text={language} />}>Language: </Paragraph>
+      <Paragraph comp={<Span text={currency} />}>Currency: </Paragraph>
+      <Paragraph comp={<Span text={population} />}>Population: </Paragraph>
       <Img src={img} />
     </div>
   );
