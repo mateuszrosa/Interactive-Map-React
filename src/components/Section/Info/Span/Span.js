@@ -1,8 +1,12 @@
 import React from "react";
-import "components/Section/Info/Span/Span.module.scss";
+import styled from "styled-components";
+
+const StyledSpan = styled.span`
+  font-weight: 400;
+`;
 
 const Span = ({ text }) => {
-  return <span>{text}</span>;
+  return <StyledSpan>{text}</StyledSpan>;
 };
 
 export default Span;

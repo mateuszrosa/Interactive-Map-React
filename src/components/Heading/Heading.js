@@ -1,5 +1,4 @@
 import React from "react";
-// import styles from "components/Heading/Heading.module.scss";
 import styled from "styled-components";
 
 let StyledHeading = styled.h1`
