@@ -1,19 +1,23 @@
 import React from "react";
 import Paragraph from "components/Paragraph/Paragraph";
 import Link from "components/Footer/Link/Link";
-import styles from "components/Footer/Footer.module.scss";
+import styled from "styled-components";
+
+const StyledFooter = styled.footer`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+`;
 
 const Footer = () => {
   return (
-    <footer>
+    <StyledFooter>
       <Paragraph
-        size="h4"
         comp={<Link href="https://restcountries.eu" text="REST COUNTRIES" />}
-        className1="footer"
       >
         based on<span> </span>
       </Paragraph>
-    </footer>
+    </StyledFooter>
   );
 };
 
