@@ -3,7 +3,6 @@ import Heading from "components/Heading/Heading";
 import Map from "components/Map/Map";
 import Section from "components/Section/Section";
 import Footer from "components/Footer/Footer";
-import "App.css";
 
 const body = document.querySelector("body");
 class App extends React.Component {
