@@ -7,7 +7,7 @@ const StyledSVG = styled(SVG)`
   display: block;
   margin: 80px auto;
   width: 55%;
-  height: 75vh;
+  height: 65vh;
   transform: scale(1.1);
 `;
 
