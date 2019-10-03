@@ -13,7 +13,11 @@ const StyledLink = styled.a`
 `;
 
 const Link = ({ text, href }) => {
-  return <StyledLink href={href}>{text}</StyledLink>;
+  return (
+    <StyledLink href={href} target="_blank">
+      {text}
+    </StyledLink>
+  );
 };
 
 export default Link;
