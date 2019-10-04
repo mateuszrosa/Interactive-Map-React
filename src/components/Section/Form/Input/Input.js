@@ -1,4 +1,5 @@
 import React from "react";
+import AppContext from "context";
 import styles from "components/Section/Form/Input/Input.module.scss";
 
 const Input = props => {
@@ -12,12 +13,20 @@ const Input = props => {
     );
   } else {
     return (
-      <input
-        className={styles.error}
-        onClick={click}
-        type={type}
-        placeholder={placeholder}
-      />
+      <AppContext.Consumer>
+        {context => {
+          return (
+            <>
+              <input
+                className={styles.error}
+                onClick={click}
+                type={type}
+                placeholder={placeholder}
+              />
+            </>
+          );
+        }}
+      </AppContext.Consumer>
     );
   }
 };
