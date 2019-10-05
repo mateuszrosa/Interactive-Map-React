@@ -1,5 +1,4 @@
 import React from "react";
-import AppContext from "context";
 import Heading from "components/Heading/Heading";
 import Map from "components/Map/Map";
 import Section from "components/Section/Section";
@@ -129,7 +128,6 @@ class App extends React.Component {
 
   render() {
     return (
-      <AppContext.Provider value={this.state}>
         <Heading type="title">Interactive World Map</Heading>
         <Map click={this.handleClick} />
         <Section
@@ -141,7 +139,6 @@ class App extends React.Component {
           id="country"
         />
         <Footer />
-      </AppContext.Provider>
     );
   }
 }
