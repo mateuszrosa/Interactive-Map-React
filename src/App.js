@@ -128,6 +128,7 @@ class App extends React.Component {
 
   render() {
     return (
+      <>
         <Heading type="title">Interactive World Map</Heading>
         <Map click={this.handleClick} />
         <Section
@@ -139,6 +140,7 @@ class App extends React.Component {
           id="country"
         />
         <Footer />
+      </>
     );
   }
 }
