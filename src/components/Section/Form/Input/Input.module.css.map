@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,KAAK,AAAC,CACF,aAAa,CAAE,GAAG,CACrB,AAED,AAAA,KAAK,CAAA,AAAA,IAAC,CAAD,MAAC,AAAA,CAAa,CACf,WAAW,CAAE,IAAI,CACpB,AAED,AAAA,MAAM,AAAA,aAAa,AAAC,CAChB,KAAK,CAAE,GAAG,CACb",
-    "sources": [
-        "Input.module.scss"
-    ],
-    "names": [],
-    "file": "Input.module.css"
-}
