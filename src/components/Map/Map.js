@@ -6,9 +6,13 @@ import styled from "styled-components";
 const StyledSVG = styled(SVG)`
   display: block;
   margin: 80px auto;
-  width: 55%;
+  width: 100%;
   height: 65vh;
-  transform: scale(1.1);
+  transform: scale(0.6);
+  @media (min-width: 375px) {
+    transform: scale(1.1);
+    width: 55%;
+  }
 `;
 
 const Map = props => {

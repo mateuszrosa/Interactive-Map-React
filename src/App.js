@@ -5,6 +5,8 @@ import Section from "components/Section/Section";
 import Footer from "components/Footer/Footer";
 
 const body = document.querySelector("body");
+body.classList.add("work");
+
 class App extends React.Component {
   state = {
     display: false,
