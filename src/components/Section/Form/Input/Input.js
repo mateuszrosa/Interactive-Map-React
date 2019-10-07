@@ -1,19 +1,32 @@
 import React from "react";
-import styles from "components/Section/Form/Input/Input.module.scss";
+import styled from "styled-components";
+
+const StyledInput = styled.input`
+  border-radius: 5px;
+  margin-left: ${props => (props.submit ? "10px" : "0")};
+  ::placeholder {
+    color: ${props => (props.error ? "red" : "black")};
+  }
+`;
 
 const Input = props => {
   const { type, text, click, input, id, placeholder } = props;
   if (input === undefined) {
-    return <input type={type} value={text} />;
+    return <StyledInput submit type={type} value={text} />;
   }
   if (input === true) {
     return (
-      <input onClick={click} type={type} placeholder={placeholder} id={id} />
+      <StyledInput
+        onClick={click}
+        type={type}
+        placeholder={placeholder}
+        id={id}
+      />
     );
   } else {
     return (
-      <input
-        className={styles.error}
+      <StyledInput
+        error
         onClick={click}
         type={type}
         placeholder={placeholder}
