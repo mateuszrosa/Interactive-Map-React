@@ -2,8 +2,7 @@ import React from "react";
 import Paragraph from "components/Paragraph/Paragraph";
 import Img from "components/Section/Info/Img/Img";
 import Span from "components/Section/Info/Span/Span";
-// import styles from "components/Section/Info/Info.module.scss";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const StyledDiv = styled.div`
   display: ${props => (props.show ? "block" : "none")};
