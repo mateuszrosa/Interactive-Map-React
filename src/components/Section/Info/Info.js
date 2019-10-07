@@ -2,7 +2,12 @@ import React from "react";
 import Paragraph from "components/Paragraph/Paragraph";
 import Img from "components/Section/Info/Img/Img";
 import Span from "components/Section/Info/Span/Span";
-import styles from "components/Section/Info/Info.module.scss";
+// import styles from "components/Section/Info/Info.module.scss";
+import styled, { css } from "styled-components";
+
+const StyledDiv = styled.div`
+  display: ${props => (props.show ? "block" : "none")};
+`;
 
 const Info = props => {
   const {
@@ -18,7 +23,7 @@ const Info = props => {
     img
   } = props.info;
   return (
-    <div className={display ? styles.show : styles.info}>
+    <StyledDiv show={display}>
       <Paragraph comp={<Span text={name} />}>Name: </Paragraph>
       <Paragraph comp={<Span text={region} />}>Region: </Paragraph>
       <Paragraph comp={<Span text={subregion} />}>Subregion: </Paragraph>
@@ -28,7 +33,7 @@ const Info = props => {
       <Paragraph comp={<Span text={currency} />}>Currency: </Paragraph>
       <Paragraph comp={<Span text={population} />}>Population: </Paragraph>
       <Img src={img} />
-    </div>
+    </StyledDiv>
   );
 };
 
