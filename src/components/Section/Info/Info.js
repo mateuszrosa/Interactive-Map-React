@@ -23,14 +23,14 @@ const Info = props => {
   } = props.info;
   return (
     <StyledDiv show={display}>
-      <Paragraph comp={<Span text={name} />}>Name: </Paragraph>
-      <Paragraph comp={<Span text={region} />}>Region: </Paragraph>
-      <Paragraph comp={<Span text={subregion} />}>Subregion: </Paragraph>
-      <Paragraph comp={<Span text={nativeName} />}>Native name: </Paragraph>
-      <Paragraph comp={<Span text={capital} />}>Capital: </Paragraph>
-      <Paragraph comp={<Span text={language} />}>Language: </Paragraph>
-      <Paragraph comp={<Span text={currency} />}>Currency: </Paragraph>
-      <Paragraph comp={<Span text={population} />}>Population: </Paragraph>
+      <Paragraph comp={<Span>{name}</Span>}>Name: </Paragraph>
+      <Paragraph comp={<Span>{region}</Span>}>Region: </Paragraph>
+      <Paragraph comp={<Span>{subregion}</Span>}>Subregion: </Paragraph>
+      <Paragraph comp={<Span>{nativeName}</Span>}>Native name: </Paragraph>
+      <Paragraph comp={<Span>{capital}</Span>}>Capital: </Paragraph>
+      <Paragraph comp={<Span>{language}</Span>}>Language: </Paragraph>
+      <Paragraph comp={<Span>{currency}</Span>}>Currency: </Paragraph>
+      <Paragraph comp={<Span>{population}</Span>}>Population: </Paragraph>
       <Img src={img} />
     </StyledDiv>
   );
