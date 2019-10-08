@@ -1,6 +1,7 @@
 import React from "react";
 import Paragraph from "components/Paragraph/Paragraph";
 import Link from "components/Footer/Link/Link";
+import Span from "components/Span/Span";
 import styled from "styled-components";
 
 const StyledFooter = styled.footer`
@@ -15,7 +16,8 @@ const Footer = () => {
       <Paragraph
         comp={<Link href="https://restcountries.eu" text="REST COUNTRIES" />}
       >
-        based on<span> </span>
+        <Span>based on</Span>
+        <Span> </Span>
       </Paragraph>
     </StyledFooter>
   );

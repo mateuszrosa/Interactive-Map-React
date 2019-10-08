@@ -5,8 +5,8 @@ const StyledSpan = styled.span`
   font-weight: 400;
 `;
 
-const Span = ({ text }) => {
-  return <StyledSpan>{text}</StyledSpan>;
+const Span = ({ children }) => {
+  return <StyledSpan>{children}</StyledSpan>;
 };
 
 export default Span;

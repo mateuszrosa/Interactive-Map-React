@@ -1,7 +1,7 @@
 import React from "react";
 import Paragraph from "components/Paragraph/Paragraph";
 import Img from "components/Section/Info/Img/Img";
-import Span from "components/Section/Info/Span/Span";
+import Span from "components/Span/Span";
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
