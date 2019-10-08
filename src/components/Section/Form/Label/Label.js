@@ -1,8 +1,12 @@
 import React from "react";
-import "components/Section/Form/Label/Label.module.scss";
+import styled from "styled-components";
+
+const StyledLabel = styled.label`
+  margin-right: 10px;
+`;
 
 const Label = ({ text, id }) => {
-  return <label htmlFor={id}>{text}</label>;
+  return <StyledLabel htmlFor={id}>{text}</StyledLabel>;
 };
 
 export default Label;
