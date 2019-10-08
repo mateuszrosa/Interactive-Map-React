@@ -1,115 +1,109 @@
-import React from "react";
-import Heading from "components/Heading/Heading";
-import Map from "components/Map/Map";
-import Section from "components/Section/Section";
-import Footer from "components/Footer/Footer";
+import React from 'react';
+import Heading from 'components/Heading/Heading';
+import Map from 'components/Map/Map';
+import Section from 'components/Section/Section';
+import Footer from 'components/Footer/Footer';
 
-const body = document.querySelector("body");
+const body = document.querySelector('body');
 
 class App extends React.Component {
   state = {
     display: false,
-    name: "",
-    region: "",
-    subregion: "",
-    nativeName: "",
-    capital: "",
-    language: "",
-    currency: "",
-    population: "",
-    img: "",
+    name: '',
+    region: '',
+    subregion: '',
+    nativeName: '',
+    capital: '',
+    language: '',
+    currency: '',
+    population: '',
+    img: '',
     input: true,
-    placeholderText: "Write here"
+    placeholderText: 'Write here',
   };
 
   handleReset = () => {
     this.setState(state => ({
       display: false,
-      name: "",
-      region: "",
-      subregion: "",
-      nativeName: "",
-      capital: "",
-      language: "",
-      currency: "",
-      population: "",
-      img: "",
+      name: '',
+      region: '',
+      subregion: '',
+      nativeName: '',
+      capital: '',
+      language: '',
+      currency: '',
+      population: '',
+      img: '',
       input: true,
-      placeholderText: "Write here"
+      placeholderText: 'Write here',
     }));
   };
 
   handleClick = e => {
-    if (e.target.getAttribute("title") === null) return;
+    if (e.target.getAttribute('title') === null) return;
     const country = e.target;
-    const value = e.target.getAttribute("title");
+    const value = e.target.getAttribute('title');
     this.handleFillCountry(country);
     this.handleFetch(value);
     this.handleReset();
   };
 
   handleFillCountry = country => {
-    const land = body.querySelectorAll(".land");
+    const land = body.querySelectorAll('.land');
     land.forEach(item => {
-      item.style.fill = "#ac9d93";
+      item.style.fill = '#ac9d93';
     });
-    country.style.fill = "gray";
+    country.style.fill = 'gray';
   };
 
   handleInput = e => {
-    const land = body.querySelectorAll(".land");
+    const land = body.querySelectorAll('.land');
     land.forEach(item => {
-      item.style.fill = "#ac9d93";
+      item.style.fill = '#ac9d93';
     });
-    e.target.value = "";
+    e.target.value = '';
     this.handleReset();
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    let input = e.target.children[1];
-    const toTitleCase = str => {
-      return str.replace(/\w\S*/g, txt => {
-        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-      });
-    };
+    const input = e.target.children[1];
+    const toTitleCase = str =>
+      str.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
     const value = toTitleCase(input.value);
     const country = document.querySelector(`#g5406 path[title="${value}"]`);
-    const selection =
-      document.querySelector(`#g5406 path[title="${value}"]`) !== null;
+    const selection = document.querySelector(`#g5406 path[title="${value}"]`) !== null;
     if (!selection) {
       this.setState(state => ({
         input: false,
-        placeholderText: "Invalid country name"
+        placeholderText: 'Invalid country name',
       }));
-      input.value = "";
+      input.value = '';
     } else {
       this.handleFetch(value);
       this.handleFillCountry(country);
       this.handleReset();
     }
-    input.value = "";
+    input.value = '';
   };
 
   handleFetch = value => {
-    if (value === "South Korea") {
-      value = "Korea (Republic of)";
-    } else if (value === "North Korea") {
+    if (value === 'South Korea') {
+      value = 'Korea (Republic of)';
+    } else if (value === 'North Korea') {
       value = "Korea (Democratic People's Republic of)";
-    } else if (value === "Republic of Congo") {
-      value = "Congo";
-    } else if (value === "Democratic Republic of Congo") {
-      value = "Congo (Democratic Republic of the)";
+    } else if (value === 'Republic of Congo') {
+      value = 'Congo';
+    } else if (value === 'Democratic Republic of Congo') {
+      value = 'Congo (Democratic Republic of the)';
     }
-    fetch(`https://restcountries.eu/rest/v2/name/` + value)
-      .then(resp => {
-        return resp.json();
-      })
+    fetch(`https://restcountries.eu/rest/v2/name/${value}`)
+      .then(resp => resp.json())
       .then(data => {
         let country = data[0];
-        if (value === "India") {
+        if (value === 'India') {
           country = data[1];
-        } else if (value === "United States") {
+        } else if (value === 'United States') {
           country = data[1];
         }
         this.setState(state => ({
@@ -122,7 +116,7 @@ class App extends React.Component {
           language: country.languages[0].name,
           currency: country.currencies[0].code,
           population: country.population.toLocaleString(),
-          img: country.flag
+          img: country.flag,
         }));
       }, false);
   };
