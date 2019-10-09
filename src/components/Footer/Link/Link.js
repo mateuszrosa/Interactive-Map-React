@@ -12,10 +12,10 @@ const StyledLink = styled.a`
   }
 `;
 
-const Link = ({ text, href }) => {
+const Link = ({ children, href }) => {
   return (
     <StyledLink href={href} target="_blank">
-      {text}
+      {children}
     </StyledLink>
   );
 };
