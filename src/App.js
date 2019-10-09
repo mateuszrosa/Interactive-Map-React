@@ -23,7 +23,7 @@ class App extends React.Component {
   };
 
   handleReset = () => {
-    this.setState(state => ({
+    this.setState((state) => ({
       display: false,
       name: '',
       region: '',
@@ -39,7 +39,7 @@ class App extends React.Component {
     }));
   };
 
-  handleClick = e => {
+  handleClick = (e) => {
     if (e.target.getAttribute('title') === null) return;
     const country = e.target;
     const value = e.target.getAttribute('title');
@@ -48,33 +48,35 @@ class App extends React.Component {
     this.handleReset();
   };
 
-  handleFillCountry = country => {
+  handleFillCountry = (country) => {
     const land = body.querySelectorAll('.land');
-    land.forEach(item => {
+    land.forEach((item) => {
       item.style.fill = '#ac9d93';
     });
     country.style.fill = 'gray';
   };
 
-  handleInput = e => {
+  handleInput = (e) => {
     const land = body.querySelectorAll('.land');
-    land.forEach(item => {
+    land.forEach((item) => {
       item.style.fill = '#ac9d93';
     });
     e.target.value = '';
     this.handleReset();
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
     const input = e.target.children[1];
-    const toTitleCase = str =>
-      str.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+    const toTitleCase = (str) => str.replace(
+        /\w\S*/g,
+        (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(),
+      );
     const value = toTitleCase(input.value);
     const country = document.querySelector(`#g5406 path[title="${value}"]`);
-    const selection = document.querySelector(`#g5406 path[title="${value}"]`) !== null;
+    const selection =      document.querySelector(`#g5406 path[title="${value}"]`) !== null;
     if (!selection) {
-      this.setState(state => ({
+      this.setState((state) => ({
         input: false,
         placeholderText: 'Invalid country name',
       }));
@@ -87,7 +89,7 @@ class App extends React.Component {
     input.value = '';
   };
 
-  handleFetch = value => {
+  handleFetch = (value) => {
     if (value === 'South Korea') {
       value = 'Korea (Republic of)';
     } else if (value === 'North Korea') {
@@ -98,15 +100,15 @@ class App extends React.Component {
       value = 'Congo (Democratic Republic of the)';
     }
     fetch(`https://restcountries.eu/rest/v2/name/${value}`)
-      .then(resp => resp.json())
-      .then(data => {
+      .then((resp) => resp.json())
+      .then((data) => {
         let country = data[0];
         if (value === 'India') {
           country = data[1];
         } else if (value === 'United States') {
           country = data[1];
         }
-        this.setState(state => ({
+        this.setState((state) => ({
           display: true,
           name: country.name,
           region: country.region,
