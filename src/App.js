@@ -23,9 +23,7 @@ class App extends React.Component {
   };
 
   handleReset = () => {
-    const { display } = this.state;
-    console.log(display);
-    this.setState((state) => ({
+    this.setState({
       display: false,
       name: '',
       region: '',
@@ -38,7 +36,7 @@ class App extends React.Component {
       img: '',
       input: true,
       placeholderText: 'Write here',
-    }));
+    });
   };
 
   handleClick = (e) => {
@@ -110,7 +108,7 @@ class App extends React.Component {
         } else if (value === 'United States') {
           country = data[1];
         }
-        this.setState((state) => ({
+        this.setState({
           display: true,
           name: country.name,
           region: country.region,
@@ -121,7 +119,7 @@ class App extends React.Component {
           currency: country.currencies[0].code,
           population: country.population.toLocaleString(),
           img: country.flag,
-        }));
+        });
       }, false);
   };
 
