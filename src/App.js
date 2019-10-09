@@ -23,6 +23,8 @@ class App extends React.Component {
   };
 
   handleReset = () => {
+    const { display } = this.state;
+    console.log(display);
     this.setState((state) => ({
       display: false,
       name: '',
@@ -124,6 +126,7 @@ class App extends React.Component {
   };
 
   render() {
+    const { input, placeholderText } = this.state;
     return (
       <>
         <Heading type="title">Interactive World Map</Heading>
@@ -132,8 +135,8 @@ class App extends React.Component {
           click={this.handleInput}
           submit={this.handleSubmit}
           info={this.state}
-          input={this.state.input}
-          placeholder={this.state.placeholderText}
+          input={input}
+          placeholder={placeholderText}
           id="country"
         />
         <Footer />
