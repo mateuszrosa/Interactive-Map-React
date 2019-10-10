@@ -1,8 +1,8 @@
-import React from "react";
-import Heading from "components/Heading/Heading";
-import Form from "components/Section/Form/Form";
-import Info from "components/Section/Info/Info";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import Info from './Info/Info';
+import Form from './Form/Form';
+import Heading from '../Heading/Heading';
 
 const StyledSection = styled.section`
   position: absolute;
@@ -11,21 +11,21 @@ const StyledSection = styled.section`
   width: 23%;
 `;
 
-const Section = ({ click, submit, info, input, id, placeholder }) => {
-  return (
-    <StyledSection>
-      <Heading>Find information about that country</Heading>
-      <Form
-        click={click}
-        submit={submit}
-        info={info}
-        input={input}
-        placeholder={placeholder}
-        id={id}
-      />
-      <Info info={info} />
-    </StyledSection>
-  );
-};
+const Section = ({
+ click, submit, info, input, id, placeholder 
+}) => (
+  <StyledSection>
+    <Heading>Find information about that country</Heading>
+    <Form
+      click={click}
+      submit={submit}
+      info={info}
+      input={input}
+      placeholder={placeholder}
+      id={id}
+    />
+    <Info info={info} />
+  </StyledSection>
+);
 
 export default Section;

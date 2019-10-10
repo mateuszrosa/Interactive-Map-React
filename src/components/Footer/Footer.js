@@ -1,8 +1,8 @@
-import React from "react";
-import Paragraph from "components/Paragraph/Paragraph";
-import Link from "components/Footer/Link/Link";
-import Span from "components/Span/Span";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import Paragraph from '../Paragraph/Paragraph';
+import Link from './Link/Link';
+import Span from '../Span/Span';
 
 const StyledFooter = styled.footer`
   position: absolute;
@@ -10,17 +10,15 @@ const StyledFooter = styled.footer`
   width: 100%;
 `;
 
-const Footer = () => {
-  return (
-    <StyledFooter>
-      <Paragraph
-        comp={<Link href="https://restcountries.eu">REST COUNTRIES</Link>}
-      >
-        <Span>based on</Span>
-        <Span> </Span>
-      </Paragraph>
-    </StyledFooter>
-  );
-};
+const Footer = () => (
+  <StyledFooter>
+    <Paragraph
+      comp={<Link href="https://restcountries.eu">REST COUNTRIES</Link>}
+    >
+      <Span>based on</Span>
+      <Span> </Span>
+    </Paragraph>
+  </StyledFooter>
+);
 
 export default Footer;

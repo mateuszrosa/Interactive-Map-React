@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const StyledLink = styled.a`
   text-decoration: none;
@@ -12,12 +12,10 @@ const StyledLink = styled.a`
   }
 `;
 
-const Link = ({ children, href }) => {
-  return (
-    <StyledLink href={href} target="_blank">
-      {children}
-    </StyledLink>
-  );
-};
+const Link = ({ children, href }) => (
+  <StyledLink href={href} target="_blank">
+    {children}
+  </StyledLink>
+);
 
 export default Link;

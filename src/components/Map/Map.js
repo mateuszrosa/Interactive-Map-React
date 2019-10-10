@@ -1,7 +1,7 @@
-import React from "react";
-import SVG from "react-inlinesvg";
-import map from "images/worldHigh3.svg";
-import styled from "styled-components";
+import React from 'react';
+import SVG from 'react-inlinesvg';
+import styled from 'styled-components';
+import map from '../../images/worldHigh3.svg';
 
 const StyledSVG = styled(SVG)`
   display: block;
@@ -11,8 +11,6 @@ const StyledSVG = styled(SVG)`
   transform: scale(1.1);
 `;
 
-const Map = props => {
-  return <StyledSVG src={map} onClick={props.click} />;
-};
+const Map = (props) => <StyledSVG src={map} onClick={props.click} />;
 
 export default Map;

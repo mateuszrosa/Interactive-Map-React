@@ -1,16 +1,18 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const StyledInput = styled.input`
   border-radius: 5px;
-  margin-left: ${props => (props.submit ? "10px" : "0")};
+  margin-left: ${(props) => (props.submit ? '10px' : '0')};
   ::placeholder {
-    color: ${props => (props.error ? "red" : "black")};
+    color: ${(props) => (props.error ? 'red' : 'black')};
   }
 `;
 
-const Input = props => {
-  const { type, text, click, input, id, placeholder } = props;
+const Input = (props) => {
+  const {
+ type, text, click, input, id, placeholder 
+} = props;
   if (input === undefined) {
     return <StyledInput submit type={type} value={text} />;
   }

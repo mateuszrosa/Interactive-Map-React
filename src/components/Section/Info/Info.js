@@ -1,14 +1,14 @@
-import React from "react";
-import Paragraph from "components/Paragraph/Paragraph";
-import Img from "components/Section/Info/Img/Img";
-import Span from "components/Span/Span";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import Img from './Img/Img';
+import Span from '../../Span/Span';
+import Paragraph from '../../Paragraph/Paragraph';
 
 const StyledDiv = styled.div`
-  display: ${props => (props.show ? "block" : "none")};
+  display: ${(props) => (props.show ? 'block' : 'none')};
 `;
 
-const Info = props => {
+const Info = (props) => {
   const {
     display,
     name,
@@ -19,7 +19,7 @@ const Info = props => {
     language,
     currency,
     population,
-    img
+    img,
   } = props.info;
   return (
     <StyledDiv show={display}>

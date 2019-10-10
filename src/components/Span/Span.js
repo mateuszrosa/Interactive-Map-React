@@ -1,12 +1,10 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const StyledSpan = styled.span`
   font-weight: 400;
 `;
 
-const Span = ({ children }) => {
-  return <StyledSpan>{children}</StyledSpan>;
-};
+const Span = ({ children }) => <StyledSpan>{children}</StyledSpan>;
 
 export default Span;
