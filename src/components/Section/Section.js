@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Info from './Info/Info';
-import Form from './Form/Form';
-import Heading from '../Heading/Heading';
+import Info from 'components/Section/Info/Info';
+import Form from 'components/Section/Form/Form';
+import Heading from 'components/Heading/Heading';
 
 const StyledSection = styled.section`
   position: absolute;
@@ -11,9 +11,7 @@ const StyledSection = styled.section`
   width: 23%;
 `;
 
-const Section = ({
- click, submit, info, input, id, placeholder 
-}) => (
+const Section = ({ click, submit, info, input, id, placeholder }) => (
   <StyledSection>
     <Heading>Find information about that country</Heading>
     <Form

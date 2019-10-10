@@ -1,7 +1,7 @@
 import React from 'react';
 import SVG from 'react-inlinesvg';
 import styled from 'styled-components';
-import map from '../../images/worldHigh3.svg';
+import map from 'images/worldHigh3.svg';
 
 const StyledSVG = styled(SVG)`
   display: block;

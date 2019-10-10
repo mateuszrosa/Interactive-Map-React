@@ -1,8 +1,8 @@
 import React from 'react';
-import Heading from './components/Heading/Heading';
-import Map from './components/Map/Map';
-import Section from './components/Section/Section';
-import Footer from './components/Footer/Footer';
+import Heading from 'components/Heading/Heading';
+import Map from 'components/Map/Map';
+import Section from 'components/Section/Section';
+import Footer from 'components/Footer/Footer';
 
 const body = document.querySelector('body');
 
