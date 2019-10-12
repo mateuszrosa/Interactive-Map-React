@@ -11,6 +11,6 @@ const StyledSVG = styled(SVG)`
   transform: scale(1.1);
 `;
 
-const Map = props => <StyledSVG src={map} onClick={props.click} />;
+const Map = ({ click }) => <StyledSVG src={map} onClick={click} />;
 
 export default Map;
