@@ -23,6 +23,7 @@ const Input = props => {
 
 Input.propTypes = {
   type: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
   click: PropTypes.func.isRequired,
   input: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
