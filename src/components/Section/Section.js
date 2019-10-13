@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Info from 'components/Section/Info/Info';
 import Form from 'components/Section/Form/Form';
 import Heading from 'components/Heading/Heading';
+import PropTypes from 'prop-types';
 
 const StyledSection = styled.section`
   position: absolute;
@@ -25,5 +26,14 @@ const Section = ({ click, submit, info, input, id, placeholder }) => (
     <Info info={info} />
   </StyledSection>
 );
+
+Section.propTypes = {
+  click: PropTypes.func.isRequired,
+  submit: PropTypes.func.isRequired,
+  info: PropTypes.object.isRequired,
+  input: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+};
 
 export default Section;
