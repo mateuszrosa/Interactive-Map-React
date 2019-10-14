@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Img from './Img/Img';
 import Span from '../../Span/Span';
 import Paragraph from '../../Paragraph/Paragraph';
 
 const StyledDiv = styled.div`
-  display: ${(props) => (props.show ? 'block' : 'none')};
+  display: ${props => (props.show ? 'block' : 'none')};
 `;
 
-const Info = (props) => {
+const Info = props => {
   const {
     display,
     name,
@@ -34,6 +35,18 @@ const Info = (props) => {
       <Img src={img} />
     </StyledDiv>
   );
+};
+
+Info.propTypes = {
+  name: PropTypes.string.isRequired,
+  region: PropTypes.string.isRequired,
+  subregion: PropTypes.string.isRequired,
+  nativeName: PropTypes.string.isRequired,
+  capital: PropTypes.string.isRequired,
+  language: PropTypes.string.isRequired,
+  currency: PropTypes.string.isRequired,
+  population: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
 };
 
 export default Info;
