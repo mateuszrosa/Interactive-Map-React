@@ -30,8 +30,8 @@ const Section = ({ click, submit, info, input, id, placeholder }) => (
 Section.propTypes = {
   click: PropTypes.func.isRequired,
   submit: PropTypes.func.isRequired,
-  info: PropTypes.object.isRequired,
-  input: PropTypes.string.isRequired,
+  info: PropTypes.shape({ root: PropTypes.string.isRequired }).isRequired,
+  input: PropTypes.bool.isRequired,
   id: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
 };
