@@ -26,11 +26,10 @@ const Section = ({ click, submit, info, input, id, placeholder }) => (
     <Info info={info} />
   </StyledSection>
 );
-
 Section.propTypes = {
   click: PropTypes.func.isRequired,
   submit: PropTypes.func.isRequired,
-  info: PropTypes.shape({ root: PropTypes.string.isRequired }).isRequired,
+  info: PropTypes.shape({ root: PropTypes.string }),
   input: PropTypes.bool.isRequired,
   id: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,

@@ -22,12 +22,12 @@ const Input = props => {
 };
 
 Input.propTypes = {
-  type: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  click: PropTypes.func.isRequired,
-  input: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  text: PropTypes.string,
+  click: PropTypes.func,
+  input: PropTypes.bool,
+  id: PropTypes.string,
+  placeholder: PropTypes.string,
 };
 
 export default Input;

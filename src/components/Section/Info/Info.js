@@ -38,15 +38,15 @@ const Info = props => {
 };
 
 Info.propTypes = {
-  name: PropTypes.string.isRequired,
-  region: PropTypes.string.isRequired,
-  subregion: PropTypes.string.isRequired,
-  nativeName: PropTypes.string.isRequired,
-  capital: PropTypes.string.isRequired,
-  language: PropTypes.string.isRequired,
-  currency: PropTypes.string.isRequired,
-  population: PropTypes.string.isRequired,
-  img: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  region: PropTypes.string,
+  subregion: PropTypes.string,
+  nativeName: PropTypes.string,
+  capital: PropTypes.string,
+  language: PropTypes.string,
+  currency: PropTypes.string,
+  population: PropTypes.string,
+  img: PropTypes.string,
 };
 
 export default Info;
