@@ -8,32 +8,14 @@ const body = document.querySelector('body');
 
 class App extends React.Component {
   state = {
-    display: false,
-    name: '',
-    region: '',
-    subregion: '',
-    nativeName: '',
-    capital: '',
-    language: '',
-    currency: '',
-    population: '',
-    img: '',
+    information: {},
     input: true,
     placeholderText: 'Write here',
   };
 
   handleReset = () => {
     this.setState({
-      display: false,
-      name: '',
-      region: '',
-      subregion: '',
-      nativeName: '',
-      capital: '',
-      language: '',
-      currency: '',
-      population: '',
-      img: '',
+      information: {},
       input: true,
       placeholderText: 'Write here',
     });
@@ -107,16 +89,18 @@ class App extends React.Component {
           country = data[1];
         }
         this.setState({
-          display: true,
-          name: country.name,
-          region: country.region,
-          subregion: country.subregion,
-          nativeName: country.nativeName,
-          capital: country.capital,
-          language: country.languages[0].name,
-          currency: country.currencies[0].code,
-          population: country.population.toLocaleString(),
-          img: country.flag,
+          information: {
+            display: true,
+            name: country.name,
+            region: country.region,
+            subregion: country.subregion,
+            nativeName: country.nativeName,
+            capital: country.capital,
+            language: country.languages[0].name,
+            currency: country.currencies[0].code,
+            population: country.population.toLocaleString(),
+            img: country.flag,
+          },
         });
       }, false);
   };
@@ -130,7 +114,7 @@ class App extends React.Component {
         <Section
           click={this.handleInput}
           submit={this.handleSubmit}
-          info={this.state}
+          info={this.state.information}
           input={input}
           placeholder={placeholderText}
           id="country"

@@ -35,4 +35,8 @@ Section.propTypes = {
   placeholder: PropTypes.string.isRequired,
 };
 
+Section.defaultProps = {
+  info: {},
+};
+
 export default Section;
