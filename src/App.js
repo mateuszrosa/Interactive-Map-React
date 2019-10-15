@@ -106,7 +106,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { input, placeholderText } = this.state;
+    const { input, placeholderText, information } = this.state;
     return (
       <>
         <Heading type="title">Interactive World Map</Heading>
@@ -114,7 +114,7 @@ class App extends React.Component {
         <Section
           click={this.handleInput}
           submit={this.handleSubmit}
-          info={this.state.information}
+          info={information}
           input={input}
           placeholder={placeholderText}
           id="country"

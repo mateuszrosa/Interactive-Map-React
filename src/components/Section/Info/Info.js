@@ -9,7 +9,7 @@ const StyledDiv = styled.div`
   display: ${props => (props.show ? 'block' : 'none')};
 `;
 
-const Info = props => {
+const Info = ({ info }) => {
   const {
     display,
     name,
@@ -21,7 +21,7 @@ const Info = props => {
     currency,
     population,
     img,
-  } = props.info;
+  } = info;
   return (
     <StyledDiv show={display}>
       <Paragraph comp={<Span>{name}</Span>}>Name: </Paragraph>
@@ -38,6 +38,7 @@ const Info = props => {
 };
 
 Info.propTypes = {
+  display: PropTypes.bool.isRequired,
   name: PropTypes.string,
   region: PropTypes.string,
   subregion: PropTypes.string,
@@ -47,6 +48,18 @@ Info.propTypes = {
   currency: PropTypes.string,
   population: PropTypes.string,
   img: PropTypes.string,
+};
+
+Info.defaultProps = {
+  name: '',
+  region: '',
+  subregion: '',
+  nativeName: '',
+  capital: '',
+  language: '',
+  currency: '',
+  population: '',
+  img: '',
 };
 
 export default Info;
