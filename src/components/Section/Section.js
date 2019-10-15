@@ -29,14 +29,10 @@ const Section = ({ click, submit, info, input, id, placeholder }) => (
 Section.propTypes = {
   click: PropTypes.func.isRequired,
   submit: PropTypes.func.isRequired,
-  info: PropTypes.shape({ root: PropTypes.string }),
+  info: PropTypes.shape({ root: PropTypes.string }).isRequired,
   input: PropTypes.bool.isRequired,
   id: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
-};
-
-Section.defaultProps = {
-  info: {},
 };
 
 export default Section;
