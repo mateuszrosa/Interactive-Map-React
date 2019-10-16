@@ -32,7 +32,7 @@ const Info = ({ info }) => {
       <Paragraph comp={<Span>{language}</Span>}>Language: </Paragraph>
       <Paragraph comp={<Span>{currency}</Span>}>Currency: </Paragraph>
       <Paragraph comp={<Span>{population}</Span>}>Population: </Paragraph>
-      <Img src={img} />
+      <Img src={img} alt={name} />
     </StyledDiv>
   );
 };

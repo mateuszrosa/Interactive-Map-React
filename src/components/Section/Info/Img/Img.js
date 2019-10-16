@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledImg = styled.img`
   width: 50%;
@@ -9,5 +10,15 @@ const StyledImg = styled.img`
 `;
 
 const Img = ({ src, alt }) => <StyledImg src={src} alt={alt} />;
+
+Img.propTypes = {
+  src: PropTypes.string,
+  alt: PropTypes.string,
+};
+
+Img.defaultProps = {
+  src: '',
+  alt: '',
+};
 
 export default Img;
