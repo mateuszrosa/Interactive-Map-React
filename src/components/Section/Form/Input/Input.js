@@ -33,4 +33,12 @@ Input.propTypes = {
   placeholder: PropTypes.string,
 };
 
+Input.defaultProps = {
+  text: '',
+  click: null,
+  input: null,
+  id: null,
+  placeholder: '',
+};
+
 export default Input;
