@@ -11,7 +11,7 @@ const StyledFooter = styled.footer`
 
 const Footer = () => (
   <StyledFooter>
-    <Paragraph comp={<Link href="https://restcountries.eu">REST COUNTRIES</Link>}>
+    <Paragraph footer comp={<Link href="https://restcountries.eu">REST COUNTRIES</Link>}>
       based on
     </Paragraph>
   </StyledFooter>

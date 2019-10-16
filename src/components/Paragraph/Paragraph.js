@@ -5,13 +5,13 @@ import PropTypes from 'prop-types';
 const StyledParagraph = styled.p`
   font-size: 24px;
   text-align: center;
-  font-weight: 800;
+  font-weight: ${props => (props.footer ? 400 : 800)};
   margin: 0 auto 0 auto;
 `;
 
-const Paragraph = ({ children, comp }) => {
+const Paragraph = ({ children, comp, footer }) => {
   return (
-    <StyledParagraph>
+    <StyledParagraph footer={footer && footer}>
       {children} {comp}
     </StyledParagraph>
   );
