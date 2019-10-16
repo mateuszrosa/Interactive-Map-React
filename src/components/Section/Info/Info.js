@@ -38,7 +38,7 @@ const Info = ({ info }) => {
 };
 
 Info.propTypes = {
-  display: PropTypes.bool.isRequired,
+  display: PropTypes.bool,
   name: PropTypes.string,
   region: PropTypes.string,
   subregion: PropTypes.string,
@@ -51,6 +51,7 @@ Info.propTypes = {
 };
 
 Info.defaultProps = {
+  display: false,
   name: '',
   region: '',
   subregion: '',

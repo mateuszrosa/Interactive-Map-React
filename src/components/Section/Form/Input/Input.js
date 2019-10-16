@@ -10,19 +10,22 @@ const StyledInput = styled.input`
   }
 `;
 
-const Input = props => {
-  const { type, text, click, input, id, placeholder } = props;
-  if (input === undefined) {
-    return <StyledInput submit type={type} value={text} />;
-  }
-  if (input === true) {
-    return <StyledInput onClick={click} type={type} placeholder={placeholder} id={id} />;
-  }
-  return <StyledInput error onClick={click} type={type} placeholder={placeholder} />;
+const Input = ({ type, text, click, input, id, placeholder }) => {
+  return (
+    <StyledInput
+      type={type}
+      submit={type === 'submit' ? type : null}
+      value={type === 'submit' ? text : undefined}
+      placeholder={type === 'text' ? placeholder : null}
+      error={input ? null : 'error'}
+      onClick={type === 'text' ? click : null}
+      id={type === 'text' ? id : null}
+    />
+  );
 };
 
 Input.propTypes = {
-  type: PropTypes.string,
+  type: PropTypes.string.isRequired,
   text: PropTypes.string,
   click: PropTypes.func,
   input: PropTypes.bool,
