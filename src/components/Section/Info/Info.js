@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import Img from './Img/Img';
 import Span from '../../Span/Span';
 import Paragraph from '../../Paragraph/Paragraph';
@@ -21,7 +20,7 @@ const Info = ({ ...info }) => {
     currency,
     population,
     img,
-  } = info;
+  } = info.info;
   return (
     <StyledDiv show={display}>
       <Paragraph comp={<Span>{name}</Span>}>Name: </Paragraph>
@@ -35,32 +34,6 @@ const Info = ({ ...info }) => {
       <Img src={img} alt={name} />
     </StyledDiv>
   );
-};
-
-Info.propTypes = {
-  display: PropTypes.bool,
-  name: PropTypes.string,
-  region: PropTypes.string,
-  subregion: PropTypes.string,
-  nativeName: PropTypes.string,
-  capital: PropTypes.string,
-  language: PropTypes.string,
-  currency: PropTypes.string,
-  population: PropTypes.string,
-  img: PropTypes.string,
-};
-
-Info.defaultProps = {
-  display: false,
-  name: '',
-  region: '',
-  subregion: '',
-  nativeName: '',
-  capital: '',
-  language: '',
-  currency: '',
-  population: '',
-  img: '',
 };
 
 export default Info;

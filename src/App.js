@@ -107,7 +107,6 @@ class App extends React.Component {
 
   render() {
     const { input, placeholderText, information } = this.state;
-    console.log(information);
     return (
       <>
         <Heading type="title">Interactive World Map</Heading>
