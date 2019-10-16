@@ -9,7 +9,11 @@ const StyledSpan = styled.span`
 const Span = ({ children }) => <StyledSpan>{children}</StyledSpan>;
 
 Span.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.string,
+};
+
+Span.defaultProps = {
+  children: '',
 };
 
 export default Span;

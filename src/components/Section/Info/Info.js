@@ -38,6 +38,7 @@ const Info = ({ info }) => {
 };
 
 Info.propTypes = {
+  info: PropTypes.shape({ root: PropTypes.string }).isRequired,
   display: PropTypes.bool,
   name: PropTypes.string,
   region: PropTypes.string,
