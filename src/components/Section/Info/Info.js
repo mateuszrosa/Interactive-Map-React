@@ -9,7 +9,7 @@ const StyledDiv = styled.div`
   display: ${props => (props.show ? 'block' : 'none')};
 `;
 
-const Info = ({ info }) => {
+const Info = ({ ...info }) => {
   const {
     display,
     name,
