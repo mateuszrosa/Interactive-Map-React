@@ -8,13 +8,21 @@ const StyledForm = styled.form`
   text-align: center;
 `;
 
-const Form = ({ click, submit, input, id, placeholder }) => (
-  <StyledForm autoComplete="off" onSubmit={submit}>
-    <Label id={id} text="Write country name" />
-    <Input click={click} type="text" input={input} placeholder={placeholder} id={id} />
-    <Input type="submit" text="Search" />
-  </StyledForm>
-);
+const Form = ({ click, submit, input, id, placeholder }) => {
+  return (
+    <StyledForm autoComplete="off" onSubmit={submit}>
+      <Label id={id} text="Write country name" />
+      <Input
+        onClick={click}
+        type="text"
+        error={input ? null : 'error'}
+        placeholder={placeholder}
+        id={id}
+      />
+      <Input type="submit" submit value="Search" />
+    </StyledForm>
+  );
+};
 
 Form.propTypes = {
   click: PropTypes.func.isRequired,
