@@ -6,7 +6,7 @@ import Footer from 'components/molecules/Footer/Footer';
 
 const body = document.querySelector('body');
 
-class App extends React.Component {
+class Root extends React.Component {
   state = {
     information: {},
     input: true,
@@ -125,4 +125,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Root;
