@@ -23,14 +23,37 @@ const Info = ({ ...info }) => {
   } = info.info;
   return (
     <StyledDiv show={display}>
-      <Paragraph comp={<Span>{name}</Span>}>Name: </Paragraph>
-      <Paragraph comp={<Span>{region}</Span>}>Region: </Paragraph>
-      <Paragraph comp={<Span>{subregion}</Span>}>Subregion: </Paragraph>
-      <Paragraph comp={<Span>{nativeName}</Span>}>Native name: </Paragraph>
-      <Paragraph comp={<Span>{capital}</Span>}>Capital: </Paragraph>
-      <Paragraph comp={<Span>{language}</Span>}>Language: </Paragraph>
-      <Paragraph comp={<Span>{currency}</Span>}>Currency: </Paragraph>
-      <Paragraph comp={<Span>{population}</Span>}>Population: </Paragraph>
+      <Paragraph>
+        Name:<Span> {name}</Span>
+      </Paragraph>
+      <Paragraph>
+        Region:
+        <Span> {region}</Span>
+      </Paragraph>
+      <Paragraph>
+        Subregion:
+        <Span> {subregion}</Span>
+      </Paragraph>
+      <Paragraph>
+        Native name:
+        <Span> {nativeName}</Span>
+      </Paragraph>
+      <Paragraph>
+        Capital:
+        <Span> {capital}</Span>
+      </Paragraph>
+      <Paragraph>
+        Language:
+        <Span> {language}</Span>
+      </Paragraph>
+      <Paragraph>
+        Currency:
+        <Span> {currency}</Span>
+      </Paragraph>
+      <Paragraph>
+        Population:
+        <Span> {population}</Span>
+      </Paragraph>
       <Img src={img} alt={name} />
     </StyledDiv>
   );
