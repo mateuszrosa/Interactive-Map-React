@@ -1,7 +1,7 @@
 import React from 'react';
 import Heading from 'components/atoms/Heading/Heading';
 import Map from 'components/atoms/Map/Map';
-import Section from 'components/Section/Section';
+import Section from 'components/organisms/Section/Section';
 import Footer from 'components/molecules/Footer/Footer';
 
 const body = document.querySelector('body');
