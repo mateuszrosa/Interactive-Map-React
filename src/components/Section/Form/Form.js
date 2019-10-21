@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Input from 'components/Section/Form/Input/Input';
-import Label from 'components/Section/Form/Label/Label';
+import Input from 'components/atoms/Input/Input';
+import Label from 'components/atoms/Label/Label';
 import PropTypes from 'prop-types';
 
 const StyledForm = styled.form`

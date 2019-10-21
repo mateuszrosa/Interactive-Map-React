@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Paragraph from 'components/Paragraph/Paragraph';
-import Link from 'components/Footer/Link/Link';
-import Span from 'components/Span/Span';
+import Paragraph from 'components/atoms/Paragraph/Paragraph';
+import Link from 'components/atoms/Link/Link';
+import Span from 'components/atoms/Span/Span';
 
 const StyledFooter = styled.footer`
   position: absolute;

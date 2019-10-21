@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Info from 'components/Section/Info/Info';
 import Form from 'components/Section/Form/Form';
-import Heading from 'components/Heading/Heading';
+import Heading from 'components/atoms/Heading/Heading';
 import PropTypes from 'prop-types';
 
 const StyledSection = styled.section`

@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Img from './Img/Img';
-import Span from '../../Span/Span';
-import Paragraph from '../../Paragraph/Paragraph';
+import Img from 'components/atoms/Img/Img';
+import Span from 'components/atoms/Span/Span';
+import Paragraph from 'components/atoms/Paragraph/Paragraph';
 
 const StyledDiv = styled.div`
   display: ${props => (props.show ? 'block' : 'none')};
