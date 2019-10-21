@@ -1,6 +1,4 @@
-import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
 const StyledLink = styled.a`
   text-decoration: none;
@@ -14,15 +12,4 @@ const StyledLink = styled.a`
   }
 `;
 
-const Link = ({ children, href }) => (
-  <StyledLink href={href} target="_blank">
-    {children}
-  </StyledLink>
-);
-
-Link.propTypes = {
-  children: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
-};
-
-export default Link;
+export default StyledLink;
