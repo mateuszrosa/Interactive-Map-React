@@ -6,10 +6,13 @@ import Heading from 'components/atoms/Heading/Heading';
 import PropTypes from 'prop-types';
 
 const StyledSection = styled.section`
-  position: absolute;
-  left: 0;
-  top: 20%;
   width: 23%;
+  margin: 0 auto;
+  @media (min-width: 768px) {
+    position: absolute;
+    left: 0;
+    top: 20%;
+  }
 `;
 
 const Section = ({ click, submit, info, input, id, placeholder }) => (

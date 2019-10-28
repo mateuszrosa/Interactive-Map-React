@@ -3,8 +3,19 @@ import Heading from 'components/atoms/Heading/Heading';
 import Map from 'components/atoms/Map/Map';
 import Section from 'components/organisms/Section/Section';
 import Footer from 'components/molecules/Footer/Footer';
+import styled from 'styled-components';
 
 const body = document.querySelector('body');
+
+const StyledWrapper = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    display: block;
+  }
+`;
 
 class Root extends React.Component {
   state = {
@@ -109,7 +120,7 @@ class Root extends React.Component {
   render() {
     const { input, placeholderText, information } = this.state;
     return (
-      <>
+      <StyledWrapper>
         <Heading type="title">Interactive World Map</Heading>
         <Map click={this.handleClick} />
         <Section
@@ -121,7 +132,7 @@ class Root extends React.Component {
           id="country"
         />
         <Footer />
-      </>
+      </StyledWrapper>
     );
   }
 }
