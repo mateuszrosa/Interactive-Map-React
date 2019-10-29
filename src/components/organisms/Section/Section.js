@@ -6,9 +6,10 @@ import Heading from 'components/atoms/Heading/Heading';
 import PropTypes from 'prop-types';
 
 const StyledSection = styled.section`
-  width: 23%;
+  width: 100%;
   margin: 0 auto;
   @media (min-width: 1024px) {
+    width: 23%;
     position: absolute;
     left: 0;
     top: 20%;
