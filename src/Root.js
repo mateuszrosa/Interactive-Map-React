@@ -12,7 +12,7 @@ const StyledWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: block;
   }
 `;

@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 const StyledSection = styled.section`
   width: 23%;
   margin: 0 auto;
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     position: absolute;
     left: 0;
     top: 20%;
