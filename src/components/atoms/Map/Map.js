@@ -4,15 +4,18 @@ import styled from 'styled-components';
 import map from 'images/worldHigh3.svg';
 import PropTypes from 'prop-types';
 
-const StyledSVG = styled(SVG)`
-  display: block;
-  margin: 80px auto;
-  width: 55%;
-  height: 70%;
-  transform: scale(1.1);
+const StyledWrapper = styled.div`
+  width: 70%;
+  /* height: 100%; */
+  border: 1px solid black;
+  margin: 0 auto;
 `;
 
-const Map = ({ click }) => <StyledSVG src={map} onClick={click} />;
+const Map = ({ click }) => (
+  <StyledWrapper>
+    <SVG src={map} onClick={click} viewBox="0 0 1050 650" />
+  </StyledWrapper>
+);
 
 Map.propTypes = {
   click: PropTypes.func.isRequired,
