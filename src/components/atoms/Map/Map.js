@@ -5,8 +5,10 @@ import map from 'images/worldHigh3.svg';
 import PropTypes from 'prop-types';
 
 const StyledWrapper = styled.div`
-  width: 70%;
-  /* height: 100%; */
+  width: 100%;
+  @media (min-width: 1440px) {
+    width: 70%;
+  }
   border: 1px solid black;
   margin: 0 auto;
 `;
