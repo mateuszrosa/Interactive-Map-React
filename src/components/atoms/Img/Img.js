@@ -8,7 +8,7 @@ const StyledImg = styled.img`
   @media (min-width: 768px) {
     width: 20%;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1024px) {
     width: 50%;
   }
 `;
