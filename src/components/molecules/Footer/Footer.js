@@ -5,19 +5,21 @@ import Link from 'components/atoms/Link/Link';
 import Span from 'components/atoms/Span/Span';
 
 const StyledFooter = styled.footer`
+  width: 100%;
   position: absolute;
   bottom: 0;
-  width: 100%;
-  ${({ show }) =>
+  ${show =>
     show &&
     css`
-      position: relative;
-      margin-bottom: 0;
+      @media (min-width: 768px) {
+        position: relative;
+        margin-bottom: 0;
+      }
+      @media (min-width: 1024px) {
+        position: absolute;
+        bottom: 0;
+      }
     `}
-  @media (min-width: 1440px) {
-    position: absolute;
-    bottom: 0;
-  }
 `;
 
 const Footer = ({ ...info }) => {
