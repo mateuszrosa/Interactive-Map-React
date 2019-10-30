@@ -14,6 +14,10 @@ const StyledFooter = styled.footer`
       position: relative;
       margin-bottom: 0;
     `}
+  @media (min-width: 1440px) {
+    position: absolute;
+    bottom: 0;
+  }
 `;
 
 const Footer = ({ ...info }) => {
