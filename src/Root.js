@@ -33,7 +33,6 @@ class Root extends React.Component {
   };
 
   handleClick = e => {
-    console.log('object');
     if (e.target.getAttribute('title') === null) return;
     const country = e.target;
     const value = e.target.getAttribute('title');
@@ -131,7 +130,7 @@ class Root extends React.Component {
           placeholder={placeholderText}
           id="country"
         />
-        <Footer />
+        <Footer info={information} />
       </StyledWrapper>
     );
   }
