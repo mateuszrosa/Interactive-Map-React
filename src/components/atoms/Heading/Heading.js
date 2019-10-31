@@ -7,6 +7,9 @@ const StyledHeading = styled.h1`
   @media (min-width: 768px) {
     font-size: ${props => (props.type === 'title' ? '60px' : '24px')};
   }
+  @media (min-width: 1024px) {
+    font-size: ${props => (props.type === 'title' ? '40px' : '14px')};
+  }
 `;
 
 export default StyledHeading;
