@@ -12,7 +12,6 @@ const StyledWrapper = styled.div`
   @media (min-width: 1440px) {
     width: 70%;
   }
-  border: 1px solid black;
   margin: 0 auto;
 `;
 
