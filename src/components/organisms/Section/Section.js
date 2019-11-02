@@ -12,10 +12,11 @@ const StyledSection = styled.section`
     width: 20%;
     position: absolute;
     left: 0;
-    top: 10%;
+    top: 20%;
   }
   @media (min-width: 1440px) {
     width: 23%;
+    top: 10%;
   }
 `;
 
