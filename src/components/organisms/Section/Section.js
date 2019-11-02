@@ -16,7 +16,7 @@ const StyledSection = styled.section`
   }
   @media (min-width: 1440px) {
     width: 23%;
-    top: 10%;
+    top: 15%;
   }
 `;
 
