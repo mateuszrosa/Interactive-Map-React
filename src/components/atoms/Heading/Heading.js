@@ -5,7 +5,7 @@ const StyledHeading = styled.h1`
   text-align: center;
   font-size: ${props => (props.type === 'title' ? '40px' : '20px')};
   @media (min-width: 1024px) {
-    font-size: ${props => (props.type === 'title' ? '50px' : '14px')};
+    font-size: ${props => (props.type === 'title' ? '55px' : '14px')};
   }
   @media (min-width: 1440px) {
     font-size: ${props => (props.type === 'title' ? '70px' : '24px')};
