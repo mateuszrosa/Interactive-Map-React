@@ -7,6 +7,10 @@ import Span from 'components/atoms/Span/Span';
 const StyledFooter = styled.footer`
   width: 100%;
   margin-bottom: 0;
+  @media (min-width: 1024px) {
+    position: absolute;
+    bottom: 0;
+  }
 `;
 
 const Footer = () => {
