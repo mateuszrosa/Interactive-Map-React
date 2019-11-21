@@ -11,6 +11,7 @@ const StyledSection = styled.section`
   margin: 0 auto;
   @media (min-width: 1024px) {
     width: 20%;
+    height: auto;
     position: absolute;
     left: 0;
     top: 20%;
