@@ -6,6 +6,12 @@ import PropTypes from 'prop-types';
 
 const StyledForm = styled.form`
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (min-width: 375px) {
+    display: block;
+  }
 `;
 
 const Form = ({ click, submit, input, id, placeholder }) => {
