@@ -19,7 +19,7 @@ const StyledWrapper = styled.div`
 
 const Map = ({ click }) => (
   <StyledWrapper>
-    <SVG src={map} onClick={click} viewBox="0 0 1050 650" />
+    <SVG src={map} onClick={click} viewBox="0 0 1010 650" />
   </StyledWrapper>
 );
 
