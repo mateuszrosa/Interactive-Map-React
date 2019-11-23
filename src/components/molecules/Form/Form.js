@@ -18,7 +18,7 @@ const StyledForm = styled.form`
 const Form = ({ click, submit, input, id, placeholder }) => {
   return (
     <StyledForm autoComplete="off" onSubmit={submit}>
-      <Label htmlFor={id}>Write country name</Label>
+      <Label htmlFor={id}>Write country name:</Label>
       <Input
         onClick={click}
         type="text"
