@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 const StyledForm = styled.form`
   text-align: center;
   display: flex;
-  margin: 0 auto;
+  justify-content: center;
   @media (min-width: 375px) {
     display: block;
   }
