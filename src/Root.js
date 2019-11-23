@@ -21,14 +21,14 @@ class Root extends React.Component {
   state = {
     information: {},
     input: true,
-    placeholderText: 'Write here',
+    placeholderText: '',
   };
 
   handleReset = () => {
     this.setState({
       information: {},
       input: true,
-      placeholderText: 'Write here',
+      placeholderText: '',
     });
   };
 
