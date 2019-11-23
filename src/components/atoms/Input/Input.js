@@ -7,7 +7,7 @@ const Input = styled.input`
   ::placeholder {
     color: ${props => (props.error ? 'red' : 'black')};
   }
-  @media (min-width: 425px) {
+  @media (min-width: 375px) {
     margin-left: ${({ submit }) => (submit ? '5px' : 'auto')};
   }
 `;
