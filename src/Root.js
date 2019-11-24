@@ -80,6 +80,11 @@ class Root extends React.Component {
         placeholderText: 'Invalid name',
       }));
       input.value = '';
+      this.handleReset();
+      const land = body.querySelectorAll('.land');
+      land.forEach(item => {
+        item.style.fill = '#ac9d93';
+      });
     } else {
       this.handleFetch(value);
       this.handleFillCountry(country);
