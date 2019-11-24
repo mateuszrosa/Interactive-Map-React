@@ -75,12 +75,12 @@ class Root extends React.Component {
     const country = document.querySelector(`#g5406 path[title="${value}"]`);
     const selection = document.querySelector(`#g5406 path[title="${value}"]`) !== null;
     if (!selection) {
+      this.handleReset();
       this.setState(state => ({
         input: false,
         placeholderText: 'Invalid name',
       }));
       input.value = '';
-      this.handleReset();
       const land = body.querySelectorAll('.land');
       land.forEach(item => {
         item.style.fill = '#ac9d93';
