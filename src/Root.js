@@ -69,7 +69,7 @@ class Root extends React.Component {
     if (!selection) {
       this.setState(state => ({
         input: false,
-        placeholderText: 'Invalid country name',
+        placeholderText: 'Invalid name',
       }));
       input.value = '';
     } else {
