@@ -5,7 +5,7 @@ const Input = styled.input`
   width: ${({ submit }) => (submit ? '60px' : '110px')};
   margin-left: ${({ submit }) => (submit ? '5px' : '0')};
   ::placeholder {
-    color: ${props => (props.error ? 'red' : 'black')};
+    color: ${({ error }) => (error ? 'red' : 'black')};
   }
 `;
 

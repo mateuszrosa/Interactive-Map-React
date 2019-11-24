@@ -33,7 +33,15 @@ class Root extends React.Component {
   };
 
   handleClick = e => {
-    if (e.target.getAttribute('title') === null) return;
+    if (e.target.getAttribute('title') === null) {
+      this.handleReset();
+      const land = body.querySelectorAll('.land');
+      land.forEach(item => {
+        item.style.fill = '#ac9d93';
+      });
+      e.target.value = '';
+      return;
+    }
     const country = e.target;
     const value = e.target.getAttribute('title');
     this.handleFillCountry(country);
