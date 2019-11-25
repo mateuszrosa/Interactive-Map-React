@@ -7,6 +7,9 @@ const Input = styled.input`
   ::placeholder {
     color: ${({ error }) => (error ? 'red' : 'black')};
   }
+  @media (min-width: 1440px) {
+    width: ${({ submit }) => (submit ? '60px' : '160px')};
+  }
 `;
 
 export default Input;
