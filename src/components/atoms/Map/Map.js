@@ -7,13 +7,12 @@ import PropTypes from 'prop-types';
 const StyledWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
-  @media (min-width: 1024px) {
-    width: 85%;
-    margin: 0 150px;
-  }
-  @media (min-width: 1440px) {
-    width: 70%;
+  @media screen and (min-width: 1024px) {
+    width: 73%;
     margin: 0 auto;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 70%;
   }
 `;
 

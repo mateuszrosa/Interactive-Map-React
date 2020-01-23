@@ -14,6 +14,7 @@ const StyledWrapper = styled.div`
   flex-direction: column;
   @media (min-width: 1024px) {
     display: block;
+    margin: 0 auto;
   }
 `;
 
@@ -32,8 +33,13 @@ class Root extends React.Component {
     });
   };
 
+  handleSelect = e => {
+    console.log(e.target.value);
+  };
+
   handleClick = e => {
-    if (e.target.getAttribute('title') === null) {
+    const country = e.target;
+    if (country.getAttribute('title') === null) {
       this.handleReset();
       const land = body.querySelectorAll('.land');
       land.forEach(item => {
@@ -42,8 +48,7 @@ class Root extends React.Component {
       e.target.value = '';
       return;
     }
-    const country = e.target;
-    const value = e.target.getAttribute('title');
+    const value = country.getAttribute('title');
     this.handleFillCountry(country);
     this.handleFetch(value);
     this.handleReset();
@@ -106,6 +111,10 @@ class Root extends React.Component {
     fetch(`https://restcountries.eu/rest/v2/name/${value}`)
       .then(resp => resp.json())
       .then(data => {
+        if (data.length > 1) {
+          console.log('object');
+        }
+        console.log(data);
         let country = data[0];
         if (value === 'India') {
           country = data[1];
@@ -137,6 +146,7 @@ class Root extends React.Component {
         <Map click={this.handleClick} />
         <Section
           click={this.handleInput}
+          select={this.handleSelect}
           submit={this.handleSubmit}
           info={information}
           input={input}
