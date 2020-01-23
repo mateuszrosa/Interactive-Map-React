@@ -23,7 +23,7 @@ class Root extends React.Component {
     information: {},
     input: true,
     placeholderText: '',
-    select: 'name',
+    selected: 'name',
   };
 
   handleReset = () => {
@@ -36,7 +36,7 @@ class Root extends React.Component {
 
   handleSelect = e => {
     this.setState({
-      select: e.target.value,
+      selected: e.target.value,
     });
   };
 
@@ -142,7 +142,8 @@ class Root extends React.Component {
   };
 
   render() {
-    const { input, placeholderText, information } = this.state;
+    const { input, placeholderText, information, selected } = this.state;
+    console.log(selected);
     return (
       <StyledWrapper>
         <Heading type="title">Interactive World Map</Heading>
@@ -151,6 +152,7 @@ class Root extends React.Component {
           click={this.handleInput}
           select={this.handleSelect}
           submit={this.handleSubmit}
+          selected={selected}
           info={information}
           input={input}
           placeholder={placeholderText}
