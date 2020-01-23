@@ -9,6 +9,7 @@ const StyledForm = styled.form`
   text-align: center;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   @media (min-width: 375px) {
     display: block;
   }

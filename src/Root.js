@@ -53,7 +53,7 @@ class Root extends React.Component {
     }
     const value = country.getAttribute('title');
     this.handleFillCountry(country);
-    this.handleFetch(value);
+    this.handleFetch(value, this.state.selected);
     this.handleReset();
   };
 
@@ -82,7 +82,7 @@ class Root extends React.Component {
     const value = toTitleCase(input.value);
     const country = document.querySelector(`#g5406 path[title="${value}"]`);
     const selection = document.querySelector(`#g5406 path[title="${value}"]`) !== null;
-    if (!selection) {
+    if (!selection && this.state.selected === 'name') {
       this.handleReset();
       this.setState(state => ({
         input: false,
@@ -94,14 +94,15 @@ class Root extends React.Component {
         item.style.fill = '#ac9d93';
       });
     } else {
-      this.handleFetch(value);
-      this.handleFillCountry(country);
+      this.handleFetch(value, this.state.selected);
+      console.log(country);
+      // this.handleFillCountry(country);
       this.handleReset();
     }
     input.value = '';
   };
 
-  handleFetch = value => {
+  handleFetch = (value, selected) => {
     if (value === 'South Korea') {
       value = 'Korea (Republic of)';
     } else if (value === 'North Korea') {
@@ -111,14 +112,17 @@ class Root extends React.Component {
     } else if (value === 'Democratic Republic of Congo') {
       value = 'Congo (Democratic Republic of the)';
     }
-    fetch(`https://restcountries.eu/rest/v2/name/${value}`)
+    fetch(`https://restcountries.eu/rest/v2/${selected}/${value}`)
       .then(resp => resp.json())
       .then(data => {
-        if (data.length > 1) {
+        if (data.length === 0) {
           console.log('object');
+          return;
         }
-        console.log(data);
-        let country = data[0];
+        for (let i = 0; i < data.length; i++) {
+          console.log(data[i].name);
+        }
+        const country = data[0];
         if (value === 'India') {
           country = data[1];
         } else if (value === 'United States') {
@@ -138,12 +142,14 @@ class Root extends React.Component {
             img: country.flag,
           },
         });
-      }, false);
+      }, false)
+      .catch(error => {
+        console.error('Error:', error);
+      });
   };
 
   render() {
     const { input, placeholderText, information, selected } = this.state;
-    console.log(selected);
     return (
       <StyledWrapper>
         <Heading type="title">Interactive World Map</Heading>
