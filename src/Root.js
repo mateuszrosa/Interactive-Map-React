@@ -23,6 +23,7 @@ class Root extends React.Component {
     information: {},
     input: true,
     placeholderText: '',
+    select: 'name',
   };
 
   handleReset = () => {
@@ -34,7 +35,9 @@ class Root extends React.Component {
   };
 
   handleSelect = e => {
-    console.log(e.target.value);
+    this.setState({
+      select: e.target.value,
+    });
   };
 
   handleClick = e => {
