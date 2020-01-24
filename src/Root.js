@@ -53,7 +53,7 @@ class Root extends React.Component {
     }
     const value = country.getAttribute('title');
     this.handleFillCountry(country);
-    this.handleFetch(value, this.state.selected);
+    this.handleFetch(value, 'name');
     this.handleReset();
   };
 
@@ -145,11 +145,21 @@ class Root extends React.Component {
       }, false)
       .catch(error => {
         console.error('Error:', error);
+        if (selected === 'capital') {
+          this.setState({
+            placeholderText: `Wrong capital name`,
+          });
+        } else if (selected === 'currency') {
+          this.setState({
+            placeholderText: 'Wrong currency name',
+          });
+        }
       });
   };
 
   render() {
     const { input, placeholderText, information, selected } = this.state;
+    console.log(selected);
     return (
       <StyledWrapper>
         <Heading type="title">Interactive World Map</Heading>
