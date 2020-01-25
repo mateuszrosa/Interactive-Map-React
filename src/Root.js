@@ -52,7 +52,7 @@ class Root extends React.Component {
       return;
     }
     const value = country.getAttribute('title');
-    this.handleFillCountry(country);
+    // this.handleFillCountry(country);
     this.handleFetch(value, 'name');
     this.handleReset();
   };
@@ -77,6 +77,13 @@ class Root extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     const input = e.target.children[1];
+    if (input.value.length < 3) {
+      input.value = '';
+      this.setState({
+        placeholderText: 'Too short value',
+      });
+      return;
+    }
     const toTitleCase = str =>
       str.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
     const value = toTitleCase(input.value);
@@ -95,8 +102,6 @@ class Root extends React.Component {
       });
     } else {
       this.handleFetch(value, this.state.selected);
-      console.log(country);
-      // this.handleFillCountry(country);
       this.handleReset();
     }
     input.value = '';
@@ -115,13 +120,6 @@ class Root extends React.Component {
     fetch(`https://restcountries.eu/rest/v2/${selected}/${value}`)
       .then(resp => resp.json())
       .then(data => {
-        if (data.length === 0) {
-          console.log('object');
-          return;
-        }
-        for (let i = 0; i < data.length; i++) {
-          console.log(data[i].name);
-        }
         const country = data[0];
         if (value === 'India') {
           country = data[1];
@@ -142,6 +140,8 @@ class Root extends React.Component {
             img: country.flag,
           },
         });
+        const countryName = document.querySelector(`#${country.alpha2Code}`);
+        this.handleFillCountry(countryName);
       }, false)
       .catch(error => {
         console.error('Error:', error);
@@ -159,7 +159,6 @@ class Root extends React.Component {
 
   render() {
     const { input, placeholderText, information, selected } = this.state;
-    console.log(selected);
     return (
       <StyledWrapper>
         <Heading type="title">Interactive World Map</Heading>
