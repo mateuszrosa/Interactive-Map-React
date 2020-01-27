@@ -34,13 +34,14 @@ class Root extends React.Component {
       information: {},
       input: true,
       placeholderText: '',
+      list: {
+        display: false,
+      },
     });
   };
 
   handleType = e => {
     let typing = true;
-    // console.log(e.target.offsetLeft);
-    // console.log(e.target.offsetTop + e.target.clientHeight);
     if (e.target.value.length > 2) {
       this.setState({
         list: {
