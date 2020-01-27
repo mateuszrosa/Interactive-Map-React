@@ -56,6 +56,7 @@ class Root extends React.Component {
       return;
     }
     const value = country.getAttribute('title');
+    console.log(value);
     this.handleFetch(value, 'name');
     this.handleReset();
   };
@@ -101,6 +102,7 @@ class Root extends React.Component {
   };
 
   handleFetch = (value, selected) => {
+    console.log(value, selected);
     if (value === 'South Korea') {
       value = 'Korea (Republic of)';
     } else if (value === 'North Korea') {
@@ -113,7 +115,7 @@ class Root extends React.Component {
     fetch(`https://restcountries.eu/rest/v2/${selected}/${value}`)
       .then(resp => resp.json())
       .then(data => {
-        const country = data[0];
+        let country = data[0];
         if (value === 'India') {
           country = data[1];
         } else if (value === 'United States') {
