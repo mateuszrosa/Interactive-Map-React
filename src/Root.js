@@ -132,12 +132,18 @@ class Root extends React.Component {
   };
 
   handleFetch = (value, selected, typing) => {
-    console.log(typing);
     fetch(`https://restcountries.eu/rest/v2/${selected}/${value}`)
       .then(resp => resp.json())
       .then(data => {
         if (typing) {
-          console.log(data);
+          this.setState(prevState => {
+            return {
+              list: {
+                ...prevState.list,
+                options: data,
+              },
+            };
+          });
           return;
         }
         let country = data;
