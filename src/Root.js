@@ -34,6 +34,10 @@ class Root extends React.Component {
     });
   };
 
+  handleType = e => {
+    console.log(e.target.value);
+  };
+
   handleSelect = e => {
     this.setState({
       selected: e.target.value,
@@ -167,6 +171,7 @@ class Root extends React.Component {
           click={this.handleInput}
           select={this.handleSelect}
           submit={this.handleSubmit}
+          type={this.handleType}
           selected={selected}
           info={information}
           input={input}

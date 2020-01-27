@@ -15,13 +15,14 @@ const StyledForm = styled.form`
   }
 `;
 
-const Form = ({ click, submit, input, id, placeholder, select, selected }) => {
+const Form = ({ click, submit, input, id, placeholder, select, selected, type }) => {
   return (
     <StyledForm autoComplete="off" onSubmit={submit}>
       <Label htmlFor={id}>Write country {selected}:</Label>
       <Input
         onClick={click}
         type="text"
+        onKeyUp={type}
         error={input ? null : 'error'}
         placeholder={placeholder}
         id={id}
