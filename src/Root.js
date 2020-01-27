@@ -35,7 +35,7 @@ class Root extends React.Component {
   };
 
   handleType = e => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
   };
 
   handleSelect = e => {
@@ -55,9 +55,8 @@ class Root extends React.Component {
       e.target.value = '';
       return;
     }
-    const value = country.getAttribute('title');
-    console.log(value);
-    this.handleFetch(value, 'name');
+    const value = country.getAttribute('id');
+    this.handleFetch(value, 'alpha');
     this.handleReset();
   };
 
@@ -91,35 +90,43 @@ class Root extends React.Component {
     }
     const toTitleCase = str =>
       str.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
-    const value = toTitleCase(input.value);
+    let value = toTitleCase(input.value);
     input.value = '';
     const land = body.querySelectorAll('.land');
     land.forEach(item => {
       item.style.fill = '#ac9d93';
     });
+    if (this.state.selected === 'name') {
+      value = document.querySelector(`[title*="${value}"]`);
+      if (value === null) {
+        this.handleReset();
+        return;
+      }
+      value = value.getAttribute('id');
+      this.handleFetch(value, 'alpha');
+      this.handleReset();
+      return;
+    }
     this.handleFetch(value, this.state.selected);
     this.handleReset();
   };
 
   handleFetch = (value, selected) => {
-    console.log(value, selected);
-    if (value === 'South Korea') {
-      value = 'Korea (Republic of)';
-    } else if (value === 'North Korea') {
-      value = "Korea (Democratic People's Republic of)";
-    } else if (value === 'Republic of Congo') {
-      value = 'Congo';
-    } else if (value === 'Democratic Republic of Congo') {
-      value = 'Congo (Democratic Republic of the)';
-    }
+    // if (value === 'South Korea') {
+    //   value = 'Korea (Republic of)';
+    // } else if (value === 'North Korea') {
+    //   value = "Korea (Democratic People's Republic of)";
+    // } else if (value === 'Republic of Congo') {
+    //   value = 'Congo';
+    // } else if (value === 'Democratic Republic of Congo') {
+    //   value = 'Congo (Democratic Republic of the)';
+    // }
     fetch(`https://restcountries.eu/rest/v2/${selected}/${value}`)
       .then(resp => resp.json())
       .then(data => {
-        let country = data[0];
-        if (value === 'India') {
-          country = data[1];
-        } else if (value === 'United States') {
-          country = data[1];
+        let country = data;
+        if (selected !== 'alpha') {
+          country = data[0];
         }
         this.setState({
           information: {
