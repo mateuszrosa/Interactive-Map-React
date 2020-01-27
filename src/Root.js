@@ -56,7 +56,6 @@ class Root extends React.Component {
       return;
     }
     const value = country.getAttribute('title');
-    // this.handleFillCountry(country);
     this.handleFetch(value, 'name');
     this.handleReset();
   };
@@ -84,6 +83,7 @@ class Root extends React.Component {
     if (input.value.length < 3) {
       input.value = '';
       this.setState({
+        input: false,
         placeholderText: 'Too short value',
       });
       return;
@@ -91,24 +91,13 @@ class Root extends React.Component {
     const toTitleCase = str =>
       str.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
     const value = toTitleCase(input.value);
-    const country = document.querySelector(`#g5406 path[title="${value}"]`);
-    const selection = document.querySelector(`#g5406 path[title="${value}"]`) !== null;
-    if (!selection && this.state.selected === 'name') {
-      this.handleReset();
-      this.setState(state => ({
-        input: false,
-        placeholderText: 'Invalid name',
-      }));
-      input.value = '';
-      const land = body.querySelectorAll('.land');
-      land.forEach(item => {
-        item.style.fill = '#ac9d93';
-      });
-    } else {
-      this.handleFetch(value, this.state.selected);
-      this.handleReset();
-    }
     input.value = '';
+    const land = body.querySelectorAll('.land');
+    land.forEach(item => {
+      item.style.fill = '#ac9d93';
+    });
+    this.handleFetch(value, this.state.selected);
+    this.handleReset();
   };
 
   handleFetch = (value, selected) => {
@@ -151,11 +140,18 @@ class Root extends React.Component {
         console.error('Error:', error);
         if (selected === 'capital') {
           this.setState({
+            input: false,
             placeholderText: `Wrong capital name`,
           });
         } else if (selected === 'currency') {
           this.setState({
+            input: false,
             placeholderText: 'Wrong currency name',
+          });
+        } else {
+          this.setState({
+            input: false,
+            placeholderText: 'Wrong country name',
           });
         }
       });

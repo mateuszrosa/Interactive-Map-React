@@ -27,7 +27,7 @@ const Form = ({ click, submit, input, id, placeholder, select, selected, type })
         placeholder={placeholder}
         id={id}
       />
-      <Select select={select} />
+      <Select select={select} selected={selected} />
       <Input type="submit" submit value="Search" />
     </StyledForm>
   );
