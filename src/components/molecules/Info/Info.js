@@ -5,7 +5,7 @@ import Span from 'components/atoms/Span/Span';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 
 const StyledDiv = styled.div`
-  display: ${props => (props.show ? 'block' : 'none')};
+  display: ${({ show }) => (show ? 'block' : 'none')};
 `;
 
 const Info = ({ ...info }) => {

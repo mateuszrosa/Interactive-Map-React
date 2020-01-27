@@ -24,6 +24,9 @@ class Root extends React.Component {
     input: true,
     placeholderText: '',
     selected: 'name',
+    list: {
+      display: false,
+    },
   };
 
   handleReset = () => {
@@ -35,7 +38,19 @@ class Root extends React.Component {
   };
 
   handleType = e => {
-    // console.log(e.target.value);
+    let typing = true;
+    // console.log(e.target.offsetLeft);
+    // console.log(e.target.offsetTop + e.target.clientHeight);
+    if (e.target.value.length > 2) {
+      this.setState({
+        list: {
+          display: true,
+          left: `${e.target.offsetLeft}px`,
+          top: `${e.target.offsetTop + 5}px`,
+        },
+      });
+      this.handleFetch(e.target.value, this.state.selected, typing);
+    }
   };
 
   handleSelect = e => {
@@ -100,6 +115,10 @@ class Root extends React.Component {
       value = document.querySelector(`[title*="${value}"]`);
       if (value === null) {
         this.handleReset();
+        this.setState({
+          input: false,
+          placeholderText: 'Wrong country name',
+        });
         return;
       }
       value = value.getAttribute('id');
@@ -111,19 +130,15 @@ class Root extends React.Component {
     this.handleReset();
   };
 
-  handleFetch = (value, selected) => {
-    // if (value === 'South Korea') {
-    //   value = 'Korea (Republic of)';
-    // } else if (value === 'North Korea') {
-    //   value = "Korea (Democratic People's Republic of)";
-    // } else if (value === 'Republic of Congo') {
-    //   value = 'Congo';
-    // } else if (value === 'Democratic Republic of Congo') {
-    //   value = 'Congo (Democratic Republic of the)';
-    // }
+  handleFetch = (value, selected, typing) => {
+    console.log(typing);
     fetch(`https://restcountries.eu/rest/v2/${selected}/${value}`)
       .then(resp => resp.json())
       .then(data => {
+        if (typing) {
+          console.log(data);
+          return;
+        }
         let country = data;
         if (selected !== 'alpha') {
           country = data[0];
@@ -167,7 +182,7 @@ class Root extends React.Component {
   };
 
   render() {
-    const { input, placeholderText, information, selected } = this.state;
+    const { input, placeholderText, information, list, selected } = this.state;
     return (
       <StyledWrapper>
         <Heading type="title">Interactive World Map</Heading>
@@ -177,6 +192,7 @@ class Root extends React.Component {
           select={this.handleSelect}
           submit={this.handleSubmit}
           type={this.handleType}
+          list={list}
           selected={selected}
           info={information}
           input={input}

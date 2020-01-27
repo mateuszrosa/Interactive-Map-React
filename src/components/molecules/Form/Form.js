@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import List from 'components/molecules/List/List';
 import Input from 'components/atoms/Input/Input';
 import Label from 'components/atoms/Label/Label';
 import Select from 'components/atoms/Select/Select';
@@ -15,7 +16,7 @@ const StyledForm = styled.form`
   }
 `;
 
-const Form = ({ click, submit, input, id, placeholder, select, selected, type }) => {
+const Form = ({ click, submit, input, id, placeholder, list, select, selected, type }) => {
   return (
     <StyledForm autoComplete="off" onSubmit={submit}>
       <Label htmlFor={id}>Write country {selected}:</Label>
@@ -27,6 +28,7 @@ const Form = ({ click, submit, input, id, placeholder, select, selected, type })
         placeholder={placeholder}
         id={id}
       />
+      <List list={list} />
       <Select select={select} selected={selected} />
       <Input type="submit" submit value="Search" />
     </StyledForm>

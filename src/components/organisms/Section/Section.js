@@ -22,7 +22,7 @@ const StyledSection = styled.section`
   }
 `;
 
-const Section = ({ click, submit, info, input, id, placeholder, select, selected, type }) => (
+const Section = ({ click, submit, info, input, id, placeholder, list, select, selected, type }) => (
   <StyledSection>
     <Heading>Find country and information about it</Heading>
     <Form
@@ -35,6 +35,7 @@ const Section = ({ click, submit, info, input, id, placeholder, select, selected
       input={input}
       placeholder={placeholder}
       id={id}
+      list={list}
     />
     <Info info={info} />
   </StyledSection>
