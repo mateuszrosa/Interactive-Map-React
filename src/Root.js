@@ -51,6 +51,8 @@ class Root extends React.Component {
         },
       });
       this.handleFetch(e.target.value, this.state.selected, typing);
+    } else {
+      this.handleReset();
     }
   };
 

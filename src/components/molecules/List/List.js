@@ -15,13 +15,10 @@ const StyledList = styled.ul`
 `;
 
 const List = ({ ...list }) => {
-  console.log(list.list);
   const { display, top, left, options } = list.list;
   return (
     <StyledList show={display} top={top} left={left}>
-      {options
-        ? options.map(item => <ListItem key={item.callingCodes}>{item.name}</ListItem>)
-        : null}
+      {options ? options.map(item => <ListItem key={item.alpha2Code}>{item.name}</ListItem>) : null}
     </StyledList>
   );
 };
