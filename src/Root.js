@@ -138,16 +138,17 @@ class Root extends React.Component {
       .then(resp => resp.json())
       .then(data => {
         if (typing) {
+          let names = [];
           data.forEach(country => {
             if (country.name.substr(0, value.length).toLowerCase() === value.toLowerCase()) {
-              console.log(country.name);
+              names.push(country.name);
             }
           });
           this.setState(prevState => {
             return {
               list: {
                 ...prevState.list,
-                options: data,
+                options: names,
               },
             };
           });

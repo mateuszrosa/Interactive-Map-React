@@ -16,9 +16,10 @@ const StyledList = styled.ul`
 
 const List = ({ ...list }) => {
   const { display, top, left, options } = list.list;
+  console.log(options);
   return (
     <StyledList show={display} top={top} left={left}>
-      {options ? options.map(item => <ListItem key={item.alpha2Code}>{item.name}</ListItem>) : null}
+      {options ? options.map(item => <ListItem key={item}>{item}</ListItem>) : null}
     </StyledList>
   );
 };
