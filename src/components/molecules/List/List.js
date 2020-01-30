@@ -18,7 +18,7 @@ const List = ({ list }) => {
   const { display, top, left, options } = list;
   return (
     <StyledList show={display} top={top} left={left}>
-      {options ? options.map(item => <ListItem key={item}>{item}</ListItem>) : null}
+      {options ? options.map(item => <ListItem key={item.alpha2Code}>{item.name}</ListItem>) : null}
     </StyledList>
   );
 };

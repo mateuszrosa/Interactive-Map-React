@@ -141,7 +141,8 @@ class Root extends React.Component {
           let names = [];
           data.forEach(country => {
             if (country.name.substr(0, value.length).toLowerCase() === value.toLowerCase()) {
-              names.push(country.name);
+              names.push(country);
+              console.log(country);
             }
           });
           this.setState(prevState => {
