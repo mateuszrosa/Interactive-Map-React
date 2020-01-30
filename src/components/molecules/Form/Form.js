@@ -16,28 +16,24 @@ const StyledForm = styled.form`
   }
 `;
 
-class Form extends Component {
-  state = {};
-  render() {
-    const { click, submit, input, id, placeholder, list, select, selected, type } = this.props;
-    return (
-      <StyledForm autoComplete="off" onSubmit={submit}>
-        <Label htmlFor={id}>Write country {selected}:</Label>
-        <Input
-          onClick={click}
-          type="text"
-          onKeyUp={type}
-          error={input ? null : 'error'}
-          placeholder={placeholder}
-          id={id}
-        />
-        <List list={list} />
-        <Select select={select} selected={selected} />
-        <Input type="submit" submit value="Search" />
-      </StyledForm>
-    );
-  }
-}
+const Form = ({ click, submit, option, input, id, placeholder, list, select, selected, type }) => {
+  return (
+    <StyledForm autoComplete="off" onSubmit={submit}>
+      <Label htmlFor={id}>Write country {selected}:</Label>
+      <Input
+        onClick={click}
+        type="text"
+        onKeyUp={type}
+        error={input ? null : 'error'}
+        placeholder={placeholder}
+        id={id}
+      />
+      <List list={list} option={option} />
+      <Select select={select} selected={selected} />
+      <Input type="submit" submit value="Search" />
+    </StyledForm>
+  );
+};
 
 Form.propTypes = {
   click: PropTypes.func.isRequired,

@@ -41,19 +41,48 @@ class Root extends React.Component {
   };
 
   handleType = e => {
-    let typing = true;
-    if (e.target.value.length > 2) {
+    let options = [];
+    // let typing = true;
+    // if (e.target.value.length > 1) {
+    //   this.setState({
+    //     list: {
+    //       display: true,
+    //       left: `${e.target.offsetLeft}px`,
+    //       top: `${e.target.offsetTop + 5}px`,
+    //     },
+    //   });
+    //   this.handleFetch(e.target.value, this.state.selected, typing);
+    // } else {
+    //   this.handleReset();
+    // }
+    if (e.target.value.length > 1) {
+      let countries = document.querySelectorAll(
+        `[title*="${e.target.value.replace(/^\w/, c => c.toUpperCase())}"]`,
+      );
+      countries.forEach(country => {
+        options.push(country.getAttribute('title'));
+      });
       this.setState({
         list: {
           display: true,
           left: `${e.target.offsetLeft}px`,
           top: `${e.target.offsetTop + 5}px`,
+          options: options,
         },
       });
-      this.handleFetch(e.target.value, this.state.selected, typing);
     } else {
       this.handleReset();
     }
+  };
+
+  handleOption = e => {
+    let input = document.querySelector('input#country');
+    input.value = e.target.textContent;
+    this.setState({
+      list: {
+        display: false,
+      },
+    });
   };
 
   handleSelect = e => {
@@ -108,53 +137,26 @@ class Root extends React.Component {
     }
     const toTitleCase = str =>
       str.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
-    let value = toTitleCase(input.value);
+    let value = input.value;
     input.value = '';
     const land = body.querySelectorAll('.land');
     land.forEach(item => {
       item.style.fill = '#ac9d93';
     });
     if (this.state.selected === 'name') {
-      value = document.querySelector(`[title*="${value}"]`);
-      if (value === null) {
-        this.handleReset();
-        this.setState({
-          input: false,
-          placeholderText: 'Wrong country name',
-        });
-        return;
-      }
-      value = value.getAttribute('id');
+      value = document.querySelector(`[title$="${value}" i]`).getAttribute('id');
       this.handleFetch(value, 'alpha');
       this.handleReset();
-      return;
+    } else {
+      this.handleFetch(value, this.state.selected);
+      this.handleReset();
     }
-    this.handleFetch(value, this.state.selected);
-    this.handleReset();
   };
 
-  handleFetch = (value, selected, typing) => {
+  handleFetch = (value, selected) => {
     fetch(`https://restcountries.eu/rest/v2/${selected}/${value}`)
       .then(resp => resp.json())
       .then(data => {
-        if (typing) {
-          let names = [];
-          data.forEach(country => {
-            if (country.name.substr(0, value.length).toLowerCase() === value.toLowerCase()) {
-              names.push(country);
-              console.log(country);
-            }
-          });
-          this.setState(prevState => {
-            return {
-              list: {
-                ...prevState.list,
-                options: names,
-              },
-            };
-          });
-          return;
-        }
         let country = data;
         if (selected !== 'alpha') {
           country = data[0];
@@ -208,6 +210,7 @@ class Root extends React.Component {
           select={this.handleSelect}
           submit={this.handleSubmit}
           type={this.handleType}
+          option={this.handleOption}
           list={list}
           selected={selected}
           info={information}

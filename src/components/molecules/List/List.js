@@ -14,11 +14,17 @@ const StyledList = styled.ul`
   list-style-type: none;
 `;
 
-const List = ({ list }) => {
+const List = ({ list, option }) => {
   const { display, top, left, options } = list;
   return (
     <StyledList show={display} top={top} left={left}>
-      {options ? options.map(item => <ListItem key={item.alpha2Code}>{item.name}</ListItem>) : null}
+      {options
+        ? options.map(item => (
+            <ListItem onClick={option} key={item}>
+              {item}
+            </ListItem>
+          ))
+        : null}
     </StyledList>
   );
 };
