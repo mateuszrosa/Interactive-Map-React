@@ -42,34 +42,28 @@ class Root extends React.Component {
 
   handleType = e => {
     let options = [];
-    // let typing = true;
-    // if (e.target.value.length > 1) {
-    //   this.setState({
-    //     list: {
-    //       display: true,
-    //       left: `${e.target.offsetLeft}px`,
-    //       top: `${e.target.offsetTop + 5}px`,
-    //     },
-    //   });
-    //   this.handleFetch(e.target.value, this.state.selected, typing);
-    // } else {
-    //   this.handleReset();
-    // }
     if (e.target.value.length > 1) {
-      let countries = document.querySelectorAll(
-        `[title*="${e.target.value.replace(/^\w/, c => c.toUpperCase())}"]`,
-      );
-      countries.forEach(country => {
-        options.push(country.getAttribute('title'));
-      });
-      this.setState({
-        list: {
-          display: true,
-          left: `${e.target.offsetLeft}px`,
-          top: `${e.target.offsetTop + 5}px`,
-          options: options,
-        },
-      });
+      if (this.state.selected === 'name') {
+        let countries = document.querySelectorAll(
+          `[title*="${e.target.value.replace(/^\w/, c => c.toUpperCase())}"]`,
+        );
+        countries.forEach(country => {
+          options.push(country.getAttribute('title'));
+        });
+        this.setState({
+          list: {
+            display: true,
+            left: `${document.querySelector('input').offsetLeft}px`,
+            top: `${document.querySelector('input').offsetTop + 5}px`,
+            names: options,
+          },
+        });
+      } else if (this.state.selected === 'currency') {
+        let currency = true;
+        if (e.target.value.length > 2) {
+          this.handleFetch(e.target.value, this.state.selected, currency);
+        }
+      }
     } else {
       this.handleReset();
     }
@@ -144,20 +138,40 @@ class Root extends React.Component {
       item.style.fill = '#ac9d93';
     });
     if (this.state.selected === 'name') {
-      value = document.querySelector(`[title$="${value}" i]`).getAttribute('id');
-      this.handleFetch(value, 'alpha');
-      this.handleReset();
+      value = document.querySelector(`[title$="${value}" i]`);
+      if (value !== null) {
+        value = value.getAttribute('id');
+        this.handleFetch(value, 'alpha');
+        this.handleReset();
+      } else {
+        this.handleReset();
+        this.setState({
+          input: false,
+          placeholderText: 'Wrong country name',
+        });
+      }
     } else {
       this.handleFetch(value, this.state.selected);
       this.handleReset();
     }
   };
 
-  handleFetch = (value, selected) => {
+  handleFetch = (value, selected, currency) => {
     fetch(`https://restcountries.eu/rest/v2/${selected}/${value}`)
       .then(resp => resp.json())
       .then(data => {
         let country = data;
+        // if (currency) {
+        //   this.setState({
+        //     list: {
+        //       display: true,
+        //       left: `${document.querySelector('input').offsetLeft}px`,
+        //       top: `${document.querySelector('input').offsetTop + 5}px`,
+        //       currencies: data,
+        //     },
+        //   });
+        //   return;
+        // }
         if (selected !== 'alpha') {
           country = data[0];
         }

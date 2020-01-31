@@ -15,13 +15,20 @@ const StyledList = styled.ul`
 `;
 
 const List = ({ list, option }) => {
-  const { display, top, left, options } = list;
+  const { display, top, left, names, currencies } = list;
   return (
     <StyledList show={display} top={top} left={left}>
-      {options
-        ? options.map(item => (
-            <ListItem onClick={option} key={item}>
-              {item}
+      {currencies
+        ? currencies.map(curr => (
+            <ListItem onClick={option} key={curr.alpha2Code}>
+              {curr.name}
+            </ListItem>
+          ))
+        : null}
+      {names
+        ? names.map(name => (
+            <ListItem onClick={option} key={name}>
+              {name}
             </ListItem>
           ))
         : null}
