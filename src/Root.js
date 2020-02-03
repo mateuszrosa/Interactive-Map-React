@@ -64,7 +64,7 @@ class Root extends React.Component {
           this.handleFetch(e.target.value, this.state.selected, currency);
         }
       }
-    } else {
+    } else if (!this.state.placeholderText) {
       this.handleReset();
     }
   };
@@ -98,7 +98,6 @@ class Root extends React.Component {
     }
     const value = country.getAttribute('id');
     this.handleFetch(value, 'alpha');
-    this.handleReset();
   };
 
   handleFillCountry = country => {
@@ -161,17 +160,17 @@ class Root extends React.Component {
       .then(resp => resp.json())
       .then(data => {
         let country = data;
-        // if (currency) {
-        //   this.setState({
-        //     list: {
-        //       display: true,
-        //       left: `${document.querySelector('input').offsetLeft}px`,
-        //       top: `${document.querySelector('input').offsetTop + 5}px`,
-        //       currencies: data,
-        //     },
-        //   });
-        //   return;
-        // }
+        if (currency && country.status !== 404) {
+          this.setState({
+            list: {
+              display: true,
+              left: `${document.querySelector('input').offsetLeft}px`,
+              top: `${document.querySelector('input').offsetTop + 5}px`,
+              currencies: country,
+            },
+          });
+          return;
+        }
         if (selected !== 'alpha') {
           country = data[0];
         }
@@ -184,7 +183,7 @@ class Root extends React.Component {
             nativeName: country.nativeName,
             capital: country.capital,
             language: country.languages[0].name,
-            currency: country.currencies[0].code,
+            currency: country.currencies,
             population: country.population.toLocaleString(),
             img: country.flag,
           },
@@ -203,11 +202,6 @@ class Root extends React.Component {
           this.setState({
             input: false,
             placeholderText: 'Wrong currency name',
-          });
-        } else {
-          this.setState({
-            input: false,
-            placeholderText: 'Wrong country name',
           });
         }
       });

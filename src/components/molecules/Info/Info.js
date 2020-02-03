@@ -48,7 +48,14 @@ const Info = ({ ...info }) => {
       </Paragraph>
       <Paragraph>
         Currency:
-        <Span> {currency}</Span>
+        <Span>
+          {' '}
+          {currency
+            ? currency.map(
+                (curr, item) => `${curr.code}${currency.length - 1 === item ? '' : ', '}`,
+              )
+            : null}
+        </Span>
       </Paragraph>
       <Paragraph>
         Population:
