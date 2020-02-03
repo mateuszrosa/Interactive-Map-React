@@ -1,12 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const StyledSelect = styled.select`
+  width: 55px;
+  margin-left: 5px;
+`;
+
 const Select = ({ select, selected }) => {
   return (
-    <select value={selected} onChange={select}>
+    <StyledSelect value={selected} onChange={select}>
       <option value="name">name</option>
       <option value="capital">capital</option>
-    </select>
+    </StyledSelect>
   );
 };
 
