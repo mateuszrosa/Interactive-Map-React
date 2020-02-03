@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const StyledSelect = styled.select`
   width: 55px;
   margin-left: 5px;
+  border-radius: 5px;
 `;
 
 const Select = ({ select, selected }) => {
