@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledSelect = styled.select`
-  width: 55px;
+  width: 60px;
   margin-left: 5px;
   border-radius: 5px;
 `;
