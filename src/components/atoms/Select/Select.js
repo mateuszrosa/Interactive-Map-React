@@ -6,7 +6,6 @@ const Select = ({ select, selected }) => {
     <select value={selected} onChange={select}>
       <option value="name">name</option>
       <option value="capital">capital</option>
-      <option value="currency">currency</option>
     </select>
   );
 };

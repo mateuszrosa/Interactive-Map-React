@@ -58,11 +58,6 @@ class Root extends React.Component {
             names: options,
           },
         });
-      } else if (this.state.selected === 'currency') {
-        let currency = true;
-        if (e.target.value.length > 2) {
-          this.handleFetch(e.target.value, this.state.selected, currency);
-        }
       }
     } else if (!this.state.placeholderText) {
       this.handleReset();
@@ -155,22 +150,11 @@ class Root extends React.Component {
     }
   };
 
-  handleFetch = (value, selected, currency) => {
+  handleFetch = (value, selected) => {
     fetch(`https://restcountries.eu/rest/v2/${selected}/${value}`)
       .then(resp => resp.json())
       .then(data => {
         let country = data;
-        if (currency && country.status !== 404) {
-          this.setState({
-            list: {
-              display: true,
-              left: `${document.querySelector('input').offsetLeft}px`,
-              top: `${document.querySelector('input').offsetTop + 5}px`,
-              currencies: country,
-            },
-          });
-          return;
-        }
         if (selected !== 'alpha') {
           country = data[0];
         }
@@ -197,11 +181,6 @@ class Root extends React.Component {
           this.setState({
             input: false,
             placeholderText: `Wrong capital name`,
-          });
-        } else if (selected === 'currency') {
-          this.setState({
-            input: false,
-            placeholderText: 'Wrong currency name',
           });
         }
       });
