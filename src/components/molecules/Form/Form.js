@@ -25,7 +25,8 @@ const StyledForm = styled.form`
   }
 
   @media (min-width: 768px) {
-    width: 60%;
+    padding: 6px;
+    width: 75%;
     height: auto;
   }
 
