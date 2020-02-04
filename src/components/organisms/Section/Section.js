@@ -13,6 +13,11 @@ const StyledSection = styled.section`
   border-radius: 5px;
   padding: 10px;
 
+  @media (min-width: 768px) {
+    width: 50%;
+    height: 150px;
+  }
+
   @media (min-width: 1024px) {
     width: 20%;
     height: auto;

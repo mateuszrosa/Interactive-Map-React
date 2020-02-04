@@ -7,7 +7,6 @@ import Select from 'components/atoms/Select/Select';
 import PropTypes from 'prop-types';
 
 const StyledForm = styled.form`
-  /* border: 1px solid black; */
   border-radius: 5px;
   width: 70%;
   height: auto;
@@ -26,8 +25,8 @@ const StyledForm = styled.form`
   }
 
   @media (min-width: 768px) {
-    width: 40%;
-    height: 25%;
+    width: 60%;
+    height: auto;
   }
 
   @media (min-width: 1024px) {
