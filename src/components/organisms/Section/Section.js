@@ -7,17 +7,20 @@ import PropTypes from 'prop-types';
 
 const StyledSection = styled.section`
   width: 100%;
-  height: 100%;
+  height: auto;
   margin: 0 auto;
+  background-color: #dedfe0;
+  border-radius: 5px;
+  padding: 10px;
+
   @media (min-width: 1024px) {
     width: 20%;
     height: auto;
     position: absolute;
-    left: 0;
-    top: 20%;
+    left: 5px;
+    top: 15%;
   }
   @media (min-width: 1440px) {
-    width: 23%;
     top: 15%;
   }
 `;

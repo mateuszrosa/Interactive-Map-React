@@ -7,12 +7,36 @@ import Select from 'components/atoms/Select/Select';
 import PropTypes from 'prop-types';
 
 const StyledForm = styled.form`
+  /* border: 1px solid black; */
+  border-radius: 5px;
+  width: 70%;
+  height: auto;
+  padding: 3px;
+  margin: 7.5px auto;
   text-align: center;
   display: flex;
+  align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
-  @media (min-width: 375px) {
-    display: block;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  background-color: #ede8e7;
+
+  @media (min-width: 425px) {
+    width: 60%;
+  }
+
+  @media (min-width: 768px) {
+    width: 40%;
+    height: 25%;
+  }
+
+  @media (min-width: 1024px) {
+    width: 100%;
+    height: 80px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 70%;
   }
 `;
 

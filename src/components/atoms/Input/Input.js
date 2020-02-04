@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 const Input = styled.input`
   border-radius: 5px;
-  width: ${({ submit }) => (submit ? '60px' : '110px')};
+  width: ${({ submit }) => (submit ? '60px' : '75%')};
   margin-left: ${({ submit }) => (submit ? '5px' : '0')};
+  background-color: #fff;
   ::placeholder {
     color: ${({ error }) => (error ? 'red' : 'black')};
   }
