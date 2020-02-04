@@ -9,10 +9,11 @@ const StyledWrapper = styled.div`
   margin: 0 auto;
   @media screen and (min-width: 1024px) {
     width: 73%;
-    margin: 0 auto;
+    margin: 0 270px;
   }
   @media screen and (min-width: 1440px) {
     width: 70%;
+    margin: 0 auto;
   }
 `;
 
