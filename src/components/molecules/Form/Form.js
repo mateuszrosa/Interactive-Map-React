@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import List from 'components/molecules/List/List';
 import Input from 'components/atoms/Input/Input';
