@@ -62,12 +62,17 @@ const Section = ({
   </StyledSection>
 );
 Section.propTypes = {
+  select: PropTypes.func.isRequired,
+  selected: PropTypes.string.isRequired,
   click: PropTypes.func.isRequired,
   submit: PropTypes.func.isRequired,
+  option: PropTypes.func.isRequired,
+  type: PropTypes.func.isRequired,
   info: PropTypes.shape({ root: PropTypes.string }).isRequired,
   input: PropTypes.bool.isRequired,
-  id: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  list: PropTypes.shape({ root: PropTypes.string }).isRequired,
 };
 
 export default Section;
