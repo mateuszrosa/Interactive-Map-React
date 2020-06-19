@@ -123,8 +123,6 @@ class Root extends React.Component {
       });
       return;
     }
-    const toTitleCase = str =>
-      str.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
     let value = input.value;
     input.value = '';
     const land = body.querySelectorAll('.land');

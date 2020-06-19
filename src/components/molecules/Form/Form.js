@@ -65,6 +65,11 @@ Form.propTypes = {
   input: PropTypes.bool.isRequired,
   id: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
+  option: PropTypes.func.isRequired,
+  list: PropTypes.shape({ root: PropTypes.string }).isRequired,
+  select: PropTypes.func.isRequired,
+  selected: PropTypes.string.isRequired,
+  type: PropTypes.func.isRequired,
 };
 
 export default Form;
