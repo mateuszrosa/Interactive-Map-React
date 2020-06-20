@@ -1,6 +1,7 @@
 import React from 'react';
 import ListItem from 'components/atoms/ListItem/ListItem';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledList = styled.ul`
   display: ${({ show }) => (show ? 'flex' : 'none')};
@@ -27,6 +28,11 @@ const List = ({ list, option }) => {
         : null}
     </StyledList>
   );
+};
+
+List.propTypes = {
+  list: PropTypes.shape({ root: PropTypes.string }).isRequired,
+  option: PropTypes.func.isRequired,
 };
 
 export default List;
