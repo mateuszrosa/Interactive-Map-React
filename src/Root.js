@@ -1,4 +1,5 @@
 import React from 'react';
+import AppContext from './context';
 import Heading from 'components/atoms/Heading/Heading';
 import Map from 'components/atoms/Map/Map';
 import Section from 'components/organisms/Section/Section';
@@ -186,25 +187,30 @@ class Root extends React.Component {
 
   render() {
     const { input, placeholderText, information, list, selected } = this.state;
+    const contextElements = {
+      ...this.state.information,
+    };
     return (
-      <StyledWrapper>
-        <Heading type="title">Interactive World Map</Heading>
-        <Map click={this.handleClick} />
-        <Section
-          click={this.handleInput}
-          select={this.handleSelect}
-          submit={this.handleSubmit}
-          type={this.handleType}
-          option={this.handleOption}
-          list={list}
-          selected={selected}
-          info={information}
-          input={input}
-          placeholder={placeholderText}
-          id="country"
-        />
-        <Footer info={information} />
-      </StyledWrapper>
+      <AppContext.Provider value={contextElements}>
+        <StyledWrapper>
+          <Heading type="title">Interactive World Map</Heading>
+          <Map click={this.handleClick} />
+          <Section
+            click={this.handleInput}
+            select={this.handleSelect}
+            submit={this.handleSubmit}
+            type={this.handleType}
+            option={this.handleOption}
+            list={list}
+            selected={selected}
+            info={information}
+            input={input}
+            placeholder={placeholderText}
+            id="country"
+          />
+          <Footer />
+        </StyledWrapper>
+      </AppContext.Provider>
     );
   }
 }
