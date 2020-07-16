@@ -122,6 +122,7 @@ class Root extends React.Component {
         input: false,
         placeholderText: 'Too short value',
       });
+      console.log(this.state.input);
       return;
     }
     let value = input.value;
@@ -185,29 +186,30 @@ class Root extends React.Component {
       });
   };
 
+  handler = () => {
+    console.log('object');
+  };
+
   render() {
     const { input, placeholderText, information, list, selected } = this.state;
     const contextElements = {
-      ...this.state.information,
+      input,
+      placeholderText,
+      ...information,
+      list,
+      selected,
+      handleclick: this.handleClick,
+      select: this.handleSelect,
+      submit: this.handleSubmit,
+      type: this.handleType,
+      option: this.handleOption,
     };
     return (
       <AppContext.Provider value={contextElements}>
         <StyledWrapper>
           <Heading type="title">Interactive World Map</Heading>
           <Map click={this.handleClick} />
-          <Section
-            click={this.handleInput}
-            select={this.handleSelect}
-            submit={this.handleSubmit}
-            type={this.handleType}
-            option={this.handleOption}
-            list={list}
-            selected={selected}
-            info={information}
-            input={input}
-            placeholder={placeholderText}
-            id="country"
-          />
+          <Section />
           <Footer />
         </StyledWrapper>
       </AppContext.Provider>

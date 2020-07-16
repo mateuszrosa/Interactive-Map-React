@@ -5,6 +5,7 @@ import Input from 'components/atoms/Input/Input';
 import Label from 'components/atoms/Label/Label';
 import Select from 'components/atoms/Select/Select';
 import PropTypes from 'prop-types';
+import AppContext from '../../../context';
 
 const StyledForm = styled.form`
   border-radius: 5px;
@@ -40,36 +41,29 @@ const StyledForm = styled.form`
   }
 `;
 
-const Form = ({ click, submit, option, input, id, placeholder, list, select, selected, type }) => {
+const Form = () => {
   return (
-    <StyledForm autoComplete="off" onSubmit={submit}>
-      <Label htmlFor={id}>Write country {selected}:</Label>
-      <Input
-        onClick={click}
-        type="text"
-        onKeyUp={type}
-        error={input ? null : 'error'}
-        placeholder={placeholder}
-        id={id}
-      />
-      <List list={list} option={option} />
-      <Select select={select} selected={selected} />
-      <Input type="submit" submit value="Search" />
-    </StyledForm>
+    <AppContext.Consumer>
+      {({ click, submit, option, id, placeholderText, list, select, selected, type, input }) => {
+        return (
+          <StyledForm autoComplete="off" onSubmit={submit}>
+            <Label htmlFor={id}>Write country {selected}:</Label>
+            <Input
+              onClick={click}
+              type="text"
+              onKeyUp={type}
+              error={input ? null : 'error'}
+              placeholder={placeholderText}
+              id={id}
+            />
+            <List list={list} option={option} />
+            <Select select={select} selected={selected} />
+            <Input type="submit" submit value="Search" />
+          </StyledForm>
+        );
+      }}
+    </AppContext.Consumer>
   );
-};
-
-Form.propTypes = {
-  click: PropTypes.func.isRequired,
-  submit: PropTypes.func.isRequired,
-  input: PropTypes.bool.isRequired,
-  id: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
-  option: PropTypes.func.isRequired,
-  list: PropTypes.shape({ root: PropTypes.string }).isRequired,
-  select: PropTypes.func.isRequired,
-  selected: PropTypes.string.isRequired,
-  type: PropTypes.func.isRequired,
 };
 
 export default Form;

@@ -10,19 +10,7 @@ const StyledDiv = styled.div`
   display: ${({ show }) => (show ? 'block' : 'none')};
 `;
 
-const Info = ({ ...info }) => {
-  // const {
-  //   display,
-  //   name,
-  //   region,
-  //   subregion,
-  //   nativeName,
-  //   capital,
-  //   language,
-  //   currency,
-  //   population,
-  //   img,
-  // } = info.info;
+const Info = () => {
   return (
     <AppContext.Consumer>
       {({
