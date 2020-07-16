@@ -34,6 +34,7 @@ const StyledForm = styled.form`
   @media (min-width: 1024px) {
     width: 100%;
     height: 80px;
+    background-color: transparent;
   }
 
   @media (min-width: 1440px) {
