@@ -2,7 +2,7 @@ import React from 'react';
 import SVG from 'react-inlinesvg';
 import styled from 'styled-components';
 import map from 'images/worldHigh3.svg';
-import PropTypes from 'prop-types';
+import AppContext from '../../../context';
 
 const StyledWrapper = styled.div`
   width: 100%;
@@ -17,14 +17,14 @@ const StyledWrapper = styled.div`
   }
 `;
 
-const Map = ({ click }) => (
-  <StyledWrapper>
-    <SVG src={map} onClick={click} viewBox="0 0 1010 650" />
-  </StyledWrapper>
+const Map = () => (
+  <AppContext.Consumer>
+    {({ click }) => (
+      <StyledWrapper>
+        <SVG src={map} onClick={click} viewBox="0 0 1010 650" />
+      </StyledWrapper>
+    )}
+  </AppContext.Consumer>
 );
-
-Map.propTypes = {
-  click: PropTypes.func.isRequired,
-};
 
 export default Map;

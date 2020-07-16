@@ -1,7 +1,7 @@
 import React from 'react';
 import ListItem from 'components/atoms/ListItem/ListItem';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import AppContext from '../../../context';
 
 const StyledList = styled.ul`
   display: ${({ show }) => (show ? 'flex' : 'none')};
@@ -15,24 +15,24 @@ const StyledList = styled.ul`
   list-style-type: none;
 `;
 
-const List = ({ list, option }) => {
-  const { display, top, left, names } = list;
+const List = () => {
   return (
-    <StyledList show={display} top={top} left={left}>
-      {names
-        ? names.map(name => (
-            <ListItem onClick={option} key={name}>
-              {name}
-            </ListItem>
-          ))
-        : null}
-    </StyledList>
+    <AppContext.Consumer>
+      {({ displayList, top, left, names, option }) => {
+        return (
+          <StyledList show={displayList} top={top} left={left}>
+            {names
+              ? names.map(name => (
+                  <ListItem onClick={option} key={name}>
+                    {name}
+                  </ListItem>
+                ))
+              : null}
+          </StyledList>
+        );
+      }}
+    </AppContext.Consumer>
   );
-};
-
-List.propTypes = {
-  list: PropTypes.shape({ root: PropTypes.string }).isRequired,
-  option: PropTypes.func.isRequired,
 };
 
 export default List;

@@ -26,7 +26,7 @@ class Root extends React.Component {
     placeholderText: '',
     selected: 'name',
     list: {
-      display: false,
+      displayList: false,
     },
   };
 
@@ -36,7 +36,7 @@ class Root extends React.Component {
       input: true,
       placeholderText: '',
       list: {
-        display: false,
+        displayList: false,
       },
     });
   };
@@ -53,7 +53,7 @@ class Root extends React.Component {
         });
         this.setState({
           list: {
-            display: true,
+            displayList: true,
             left: `${document.querySelector('input').offsetLeft}px`,
             top: `${document.querySelector('input').offsetTop + 5}px`,
             names: options,
@@ -66,11 +66,11 @@ class Root extends React.Component {
   };
 
   handleOption = e => {
-    let input = document.querySelector('input#country');
+    let input = document.querySelector('input');
     input.value = e.target.textContent;
     this.setState({
       list: {
-        display: false,
+        displayList: false,
       },
     });
   };
@@ -122,7 +122,6 @@ class Root extends React.Component {
         input: false,
         placeholderText: 'Too short value',
       });
-      console.log(this.state.input);
       return;
     }
     let value = input.value;
@@ -186,19 +185,16 @@ class Root extends React.Component {
       });
   };
 
-  handler = () => {
-    console.log('object');
-  };
-
   render() {
     const { input, placeholderText, information, list, selected } = this.state;
     const contextElements = {
       input,
       placeholderText,
       ...information,
-      list,
+      ...list,
       selected,
-      handleclick: this.handleClick,
+      click: this.handleClick,
+      inputClick: this.handleInput,
       select: this.handleSelect,
       submit: this.handleSubmit,
       type: this.handleType,
@@ -208,7 +204,7 @@ class Root extends React.Component {
       <AppContext.Provider value={contextElements}>
         <StyledWrapper>
           <Heading type="title">Interactive World Map</Heading>
-          <Map click={this.handleClick} />
+          <Map />
           <Section />
           <Footer />
         </StyledWrapper>

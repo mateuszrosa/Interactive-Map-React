@@ -44,12 +44,23 @@ const StyledForm = styled.form`
 const Form = () => {
   return (
     <AppContext.Consumer>
-      {({ click, submit, option, id, placeholderText, list, select, selected, type, input }) => {
+      {({
+        inputClick,
+        submit,
+        option,
+        id,
+        placeholderText,
+        list,
+        select,
+        selected,
+        type,
+        input,
+      }) => {
         return (
           <StyledForm autoComplete="off" onSubmit={submit}>
             <Label htmlFor={id}>Write country {selected}:</Label>
             <Input
-              onClick={click}
+              onClick={inputClick}
               type="text"
               onKeyUp={type}
               error={input ? null : 'error'}
