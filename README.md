@@ -9,7 +9,12 @@
 
 <h2>Website:</h2>
 <ul>
-    <li><a href="http://mateuszrosa.github.io/Interactive-Map-React/">http://mateuszrosa.github.io/Interactive-Map-React/</a></li>
+    <li>
+        <a 
+            href="http://mateuszrosa.github.io/Interactive-Map-React/">
+            http://mateuszrosa.github.io/Interactive-Map-React/
+        </a>
+    </li>
 </ul>
 
 <h2>Running locally:</h2>

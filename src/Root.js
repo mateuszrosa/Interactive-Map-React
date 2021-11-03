@@ -150,29 +150,30 @@ class Root extends React.Component {
   };
 
   handleFetch = (value, selected) => {
-    fetch(`https://restcountries.eu/rest/v2/${selected}/${value}`)
+    fetch(`https://restcountries.com/v3.1/${selected}/${value}`)
       .then(resp => resp.json())
       .then(data => {
-        let country = data;
+        let [country] = data;
         if (selected !== 'alpha') {
           country = data[0];
         }
+        const lang = Object.keys(country.languages)[0].toLowerCase();
         this.setState({
           information: {
             display: true,
-            name: country.name,
+            name: country.name.common,
             region: country.region,
             subregion: country.subregion,
-            nativeName: country.nativeName,
-            capital: country.capital,
-            language: country.languages[0].name,
-            currency: country.currencies,
+            nativeName: Object.values(country.name.nativeName[lang])[0],
+            capital: country.capital[0],
+            language: Object.values(country.languages),
+            currency: Object.keys(country.currencies),
             population: country.population.toLocaleString(),
-            img: country.flag,
+            img: country.flags.png,
           },
         });
-        const countryName = document.querySelector(`#${country.alpha2Code}`);
-        this.handleFillCountry(countryName);
+        // const countryName = document.querySelector(`#${country.alpha2Code}`);
+        // this.handleFillCountry(countryName);
       }, false)
       .catch(error => {
         console.error('Error:', error);

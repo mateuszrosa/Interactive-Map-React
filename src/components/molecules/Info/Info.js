@@ -48,17 +48,18 @@ const Info = () => {
             </Paragraph>
             <Paragraph>
               Language:
-              <Span> {language}</Span>
+              <Span> {
+                language
+                  ? language.map(
+                    (curr, index) => `${curr}${language.length - 1 === index ? '' : ', '}`,
+                  )
+                  : null}</Span>
             </Paragraph>
             <Paragraph>
               Currency:
               <Span>
                 {' '}
-                {currency
-                  ? currency.map(
-                      (curr, item) => `${curr.code}${currency.length - 1 === item ? '' : ', '}`,
-                    )
-                  : null}
+                {currency}
               </Span>
             </Paragraph>
             <Paragraph>
