@@ -19,7 +19,7 @@ const Footer = () => {
       <Paragraph footer>
         based on
         <Span> </Span>
-        <Link href="https://restcountries.eu" target="_blank">
+        <Link href="https://restcountries.com" target="_blank">
           REST COUNTRIES
         </Link>
       </Paragraph>
