@@ -172,8 +172,8 @@ class Root extends React.Component {
             img: country.flags.png,
           },
         });
-        // const countryName = document.querySelector(`#${country.alpha2Code}`);
-        // this.handleFillCountry(countryName);
+        const countryName = document.querySelector(`#${country.cca2}`);
+        this.handleFillCountry(countryName);
       }, false)
       .catch(error => {
         console.error('Error:', error);
